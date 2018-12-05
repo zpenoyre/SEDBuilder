@@ -307,7 +307,7 @@ def getSED(name=-1,ra=-1,dec=-1,saveDir=-1,windowSize=2,overwrite=0):
     'Meta data about the star is stored under indivdual fields',
     'e.g. if data stored in variable called "dataTable" the R.A. of the star can be found via "dataTable.meta["RA"]".',
     'Everything intended to be read into astropy tables - either directly or via the getSEDFromFile() function.',
-    'See https://github.com/zpenoyre/spectracles for more details.',
+    'See https://github.com/zpenoyre/SEDBuilder for more details.',
     'Please cite Penoyre+2018 if you make use of this tool or data.']
     table.meta['comments']=comments
     
