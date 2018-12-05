@@ -8,6 +8,11 @@ To install SEDBuilder, download this directory, navigate to it, and run:
 
 `python setup.py install`
 
+You can also use pip (though I believe that this will just install the bare package, not the ipython notebooks or data repository):
+
+`pip install SEDBuilder`
+(https://pypi.org/project/SEDBuilder/)
+
 # Dependencies #
 * numpy
 * pathlib
