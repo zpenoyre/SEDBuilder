@@ -1,8 +1,6 @@
 # README #
 
-`spectracles` is an MIT-licensed Python code that collects VizieR-tabulated photometric data points for any object with a 2MASS ID and uses them to make an SED.
-
-I'm immediately sorry for the name.
+`spectracles` is an MIT-licensed Python code that collects VizieR and IRSA-tabulated photometric data points for any object with a 2MASS ID and uses them to make an SED. It contains SEDs for hundreds of example stars and YSOs in Taurus, Ophiuchus and Chamaeleon. It allows users to quickly access new photometric data, in the form of easy to use astropy tables, as well as to store and supplement that data.
 
 # Installation #
 
@@ -15,7 +13,8 @@ To install spectracles, download this directory, navigate to it, and run:
 * pathlib
 * astropy
 * astroquery
+(* matplotlib for the plotting function)
 
 # Examples #
 
-If you'd like to use the package, have a read through "introduction.ipynb". All the SED data published with Penoyre+2018 can also be found in "spectraData", and read with astropy tables or with the getSpectraFromFile() command.
+If you'd like to use the package, have a read through "introduction.ipynb". All the SED data published with Penoyre+2018 can also be found in "spectraData", the code used to generate it can be found in "dataCollation.ipynb". All saved data can be read with astropy tables or with the getSpectraFromFile() command.
