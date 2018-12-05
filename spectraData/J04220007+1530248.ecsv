@@ -1,0 +1,117 @@
+# %ECSV 0.9
+# ---
+# datatype:
+# - {name: lambda, datatype: float32}
+# - {name: flux, datatype: float32}
+# - {name: error, datatype: float32}
+# - {name: source, datatype: object}
+# - {name: telescope, datatype: object}
+# meta: !!omap
+# - {SimbadName: 2MASS J04220007+1530248}
+# - {2MASSID: J04220007+1530248}
+# - {ObjectType: YSO}
+# - {StellarType: M6-M8}
+# - {StellarTypeSource: Bulger+ 2014}
+# - {RA: 04 22 00.076}
+# - {DEC: +15 30 24.85}
+# - {CoordSource: Cutri+ 2003}
+# - {Distance: -1.0}
+# - {DistanceSource: ''}
+# - {Teff: 2880}
+# - {TeffSource: Bulger+ 2014}
+# - {Radius: -1.0}
+# - {RadiusSource: ''}
+# - {Luminosity: -1.0}
+# - {LuminositySource: ''}
+# - {Ag: -1.0}
+# - {AgSource: ''}
+# - {Region: Taurus}
+# - {RegionSource: Bulger+ 2014}
+# - {Av: -1.0}
+# - {AvSource: ''}
+# - {Age: -1.0}
+# - {AgeSource: ''}
+# - {Mass: -1.0}
+# - {MassSource: ''}
+# - {Mdot: -1.0}
+# - {MdotSource: ''}
+# - {DiskMass: -1.0}
+# - {DiskMassSource: ''}
+# - {DiskRadius: -1.0}
+# - {DiskRadiusSource: ''}
+# - {BinaryFlag: -1}
+# - {BinaryFlagSource: ''}
+# - {ExtraField: ''}
+# - comments: ['All units for flux+wavelength are SI, I leave it to the user to convert/add astropy units', Meta data about the star is
+#       stored under indivdual fields, 'e.g. if data stored in variable called "dataTable" the R.A. of the star can be found via "dataTable.meta["RA"]".',
+#     Everything intended to be read into astropy tables - either directly or via the getSpectraFromFile() function., See GITHUB-REPO
+#       for more details., Please cite SOME-PAPER if you make use of this tool or data.]
+# - {FileCreated: '2018-09-17'}
+# schema: astropy-2.0
+lambda flux error source telescope
+1.2398743e-06 1.1747958e-10 0.0 "Zacharias+ 2005" 2MASS
+1.2398743e-06 1.1904078e-10 0.0 "Evans+ 2003" 2MASS
+1.2398743e-06 1.1904078e-10 0.0 "Evans+ 2003" 2MASS
+1.2398743e-06 1.1747958e-10 0.0 "Cutri+ 2013" 2MASS
+1.2398743e-06 1.1747958e-10 0.0 "Cutri+ 2012" 2MASS
+1.250886e-06 1.1772106e-10 0.0 "Cutri+ 2003" 2MASS
+1.631144e-06 4.1493925e-10 0.0 "Cutri+ 2003" 2MASS
+1.650619e-06 4.0960998e-10 0.0 "Zacharias+ 2005" 2MASS
+1.650619e-06 4.0960998e-10 0.0 "Cutri+ 2013" 2MASS
+1.650619e-06 4.0960998e-10 0.0 "Cutri+ 2012" 2MASS
+2.1652834e-06 5.586066e-10 0.0 "Zacharias+ 2005" 2MASS
+2.1652834e-06 5.5092814e-10 6.3987e-11 "Evans+ 2003" 2MASS
+2.1652834e-06 5.5092814e-10 6.3987e-11 "Evans+ 2003" 2MASS
+2.1652834e-06 5.5796673e-10 6.462687e-11 "Cutri+ 2012" 2MASS
+2.1652834e-06 5.5796673e-10 6.462687e-11 "Cutri+ 2013" 2MASS
+2.1915407e-06 9.2445107e-10 1.1867954e-10 "Cutri+ 2003" 2MASS
+2.1915407e-06 5.2718696e-10 6.121365e-11 "Cutri+ 2003" 2MASS
+2.2024815e-06 8.534456e-10 6.1843876e-12 "Lawrence+ 2012" UKIDSS
+2.2024815e-06 8.534456e-10 6.1843876e-12 "Lawrence+ 2012" UKIDSS
+3.35233e-06 9.903796e-10 4.2711785e-11 "Toth+ 2014" WISE
+3.35233e-06 9.903796e-10 4.2711785e-11 "Cutri+ 2012" WISE
+3.35233e-06 9.877101e-10 5.3389734e-11 "Bulger+ 2014" WISE
+3.35233e-06 1.1905911e-09 5.6059223e-11 "Cutri+ 2013" WISE
+3.55244e-06 8.914542e-10 2.1394901e-11 "Bulger+ 2014" Spitzer
+3.55244e-06 8.8669977e-10 1.6640479e-11 "Esplin+ 2014" Spitzer
+3.55244e-06 1.0340869e-09 4.992144e-11 "Evans+ 2003" Spitzer
+3.55244e-06 1.0340869e-09 4.992144e-11 "Evans+ 2003" Spitzer
+4.4961334e-06 1.0224972e-09 5.0457045e-11 "Evans+ 2003" Spitzer
+4.4961334e-06 8.9041846e-10 1.4840306e-11 "Bulger+ 2014" Spitzer
+4.4961334e-06 1.0224972e-09 5.0457045e-11 "Evans+ 2003" Spitzer
+4.4961334e-06 8.829983e-10 1.6324338e-11 "Esplin+ 2014" Spitzer
+4.6032037e-06 1.183606e-09 6.654244e-11 "Toth+ 2014" WISE
+4.6032037e-06 1.5998501e-09 8.49478e-11 "Cutri+ 2013" WISE
+4.6032037e-06 1.183606e-09 6.654244e-11 "Cutri+ 2012" WISE
+4.6032037e-06 1.189269e-09 7.078983e-11 "Bulger+ 2014" WISE
+5.7349316e-06 5.4546384e-10 1.5506497e-11 "Esplin+ 2014" Spitzer
+5.7349316e-06 6.2208416e-10 3.192514e-11 "Evans+ 2003" Spitzer
+5.7349316e-06 6.2208416e-10 3.192514e-11 "Evans+ 2003" Spitzer
+5.7349316e-06 5.4728816e-10 1.8242938e-11 "Bulger+ 2014" Spitzer
+7.877531e-06 3.76115e-10 1.4019711e-11 "Esplin+ 2014" Spitzer
+7.877531e-06 3.9303535e-10 1.9337532e-11 "Evans+ 2003" Spitzer
+7.877531e-06 3.7708187e-10 1.450315e-11 "Bulger+ 2014" Spitzer
+7.877531e-06 3.9303535e-10 1.9337532e-11 "Evans+ 2003" Spitzer
+1.1567826e-05 8.7882784e-10 3.5870525e-11 "Cutri+ 2012" WISE
+1.1567826e-05 1.0335196e-09 4.4838157e-11 "Cutri+ 2013" WISE
+1.1567826e-05 9.640204e-10 4.4838157e-11 "Bulger+ 2014" WISE
+1.1567826e-05 8.7882784e-10 3.5870525e-11 "Toth+ 2014" WISE
+2.2105962e-05 3.3273748e-09 1.3505949e-10 "Toth+ 2014" WISE
+2.2105962e-05 3.7509706e-09 1.2278135e-10 "Cutri+ 2013" WISE
+2.2105962e-05 3.3519312e-09 1.4733764e-10 "Bulger+ 2014" WISE
+2.2105962e-05 3.3273748e-09 1.3505949e-10 "Cutri+ 2012" WISE
+2.369107e-05 1.6569662e-09 1.5500652e-10 "Evans+ 2003" Spitzer
+2.369107e-05 1.6569662e-09 1.5500652e-10 "Evans+ 2003" Spitzer
+6.504488e-05 4.5735633e-09 4.3253856e-10 "ISAS/JAXA 2010" AKARI
+6.504488e-05 4.5735633e-09 0.0 "Toth+ 2014" AKARI
+7.004763e-05 4.2798876e-09 6.1141253e-12 "Bulger+ 2014" Herschel
+9.006305e-05 3.2103158e-09 1.1095561e-10 "ISAS/JAXA 2010" AKARI
+9.006305e-05 3.2103158e-09 0.0 "Toth+ 2014" AKARI
+0.00014009526 1.5285314e-09 0.0 "Toth+ 2014" AKARI
+0.00014009526 1.5285314e-09 3.2099157e-10 "ISAS/JAXA 2010" AKARI
+0.00016011101 1.0391825e-09 2.6915763e-11 "Bulger+ 2014" Herschel
+0.00016011101 1.3106807e-09 0.0 "Toth+ 2014" AKARI
+0.00016011101 1.3106807e-09 1.872401e-10 "ISAS/JAXA 2010" AKARI
+0.00045030846 2.6630146e-11 3.2547957e-12 "Bulger+ 2014" Unspecified
+0.00084985833 1.8275986e-12 8.307266e-14 "Bulger+ 2014" Unspecified
+0.0013008976 1.949969e-13 1.2408894e-14 "Bulger+ 2014" Unspecified

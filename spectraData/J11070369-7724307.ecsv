@@ -1,0 +1,91 @@
+# %ECSV 0.9
+# ---
+# datatype:
+# - {name: lambda, datatype: float32}
+# - {name: flux, datatype: float32}
+# - {name: error, datatype: float32}
+# - {name: source, datatype: object}
+# - {name: telescope, datatype: object}
+# meta: !!omap
+# - {SimbadName: 2MASS J11070369-7724307}
+# - {2MASSID: J11070369-7724307}
+# - {ObjectType: Candidate_YSO}
+# - {StellarType: M7.5}
+# - {StellarTypeSource: Ribas+ 2017}
+# - {RA: 11 07 03.693}
+# - {DEC: -77 24 30.71}
+# - {CoordSource: Cutri+ 2003}
+# - {Distance: -1.0}
+# - {DistanceSource: ''}
+# - {Teff: 2610.0}
+# - {TeffSource: Ribas+ 2017}
+# - {Radius: -1.0}
+# - {RadiusSource: ''}
+# - {Luminosity: .nan}
+# - {LuminositySource: Ribas+ 2017}
+# - {Ag: -1.0}
+# - {AgSource: ''}
+# - {Region: Chamaeleon}
+# - {RegionSource: 'Manoj+ 2011, Ribas+ 2017'}
+# - {Av: 13.8}
+# - {AvSource: Ribas+ 2017}
+# - {Age: -1.0}
+# - {AgeSource: ''}
+# - {Mass: -1.0}
+# - {MassSource: ''}
+# - {Mdot: -1.0}
+# - {MdotSource: ''}
+# - {DiskMass: -1.0}
+# - {DiskMassSource: ''}
+# - {DiskRadius: -1.0}
+# - {DiskRadiusSource: ''}
+# - {BinaryFlag: -1}
+# - {BinaryFlagSource: ''}
+# - {ExtraField: ''}
+# - comments: ['All units for flux+wavelength are SI, I leave it to the user to convert/add astropy units', Meta data about the star is
+#       stored under indivdual fields, 'e.g. if data stored in variable called "dataTable" the R.A. of the star can be found via "dataTable.meta["RA"]".',
+#     Everything intended to be read into astropy tables - either directly or via the getSpectraFromFile() function., See GITHUB-REPO
+#       for more details., Please cite SOME-PAPER if you make use of this tool or data.]
+# - {FileCreated: '2018-09-17'}
+# schema: astropy-2.0
+lambda flux error source telescope
+1.2398743e-06 4.91775e-10 0.0 "Zacharias+ 2005" 2MASS
+1.2398743e-06 4.91775e-10 0.0 "Cutri+ 2013" 2MASS
+1.2398743e-06 4.91775e-10 0.0 "Cutri+ 2012" 2MASS
+1.250886e-06 2.6650204e-10 5.751843e-12 "Esplin+ 2017" 2MASS
+1.250886e-06 4.946585e-10 0.0 "Cutri+ 2003" 2MASS
+1.631144e-06 1.3079606e-09 2.029594e-10 "Cutri+ 2003" 2MASS
+1.631144e-06 9.268479e-10 1.0486236e-10 "Cutri+ 2003" 2MASS
+1.631144e-06 7.3967427e-10 6.7653136e-12 "Esplin+ 2017" 2MASS
+1.650619e-06 9.139147e-10 0.0 "Zacharias+ 2005" 2MASS
+1.650619e-06 9.0951036e-10 1.013014e-10 "Luhman+ 2008" 2MASS
+1.650619e-06 9.139147e-10 1.02402496e-10 "Cutri+ 2013" 2MASS
+1.650619e-06 9.139147e-10 1.02402496e-10 "Cutri+ 2012" 2MASS
+2.1652834e-06 1.1389688e-09 7.038571e-11 "Luhman+ 2008" 2MASS
+2.1652834e-06 1.1389688e-09 0.0 "Zacharias+ 2005" 2MASS
+2.1652834e-06 1.1389688e-09 7.038571e-11 "Cutri+ 2013" 2MASS
+2.1652834e-06 1.1389688e-09 7.038571e-11 "Cutri+ 2012" 2MASS
+2.1915407e-06 9.494363e-10 0.0 "Esplin+ 2017" 2MASS
+2.1915407e-06 1.0368842e-09 1.12433236e-10 "Cutri+ 2003" 2MASS
+2.1915407e-06 1.0743619e-09 6.87092e-11 "Cutri+ 2003" 2MASS
+3.35233e-06 4.3779583e-10 1.0677946e-11 "Cutri+ 2012" WISE
+3.35233e-06 4.2978737e-10 1.0677946e-11 "Cutri+ 2013" WISE
+3.55244e-06 4.7781945e-10 9.508844e-12 "Luhman+ 2008" Spitzer
+3.55244e-06 5.229865e-10 2.8526534e-11 "Dunham+ 2015" Spitzer
+4.4961334e-06 3.2648678e-10 1.6324338e-11 "Dunham+ 2015" Spitzer
+4.4961334e-06 3.0571035e-10 5.9361227e-12 "Luhman+ 2008" Spitzer
+4.6032037e-06 3.0864364e-10 7.0789824e-12 "Cutri+ 2013" WISE
+4.6032037e-06 3.397912e-10 7.0789824e-12 "Cutri+ 2012" WISE
+5.7349316e-06 1.92463e-10 7.297175e-12 "Luhman+ 2008" Spitzer
+5.7349316e-06 2.0067233e-10 1.185791e-11 "Dunham+ 2015" Spitzer
+7.877531e-06 1.2472708e-10 4.3509445e-12 "Luhman+ 2008" Spitzer
+7.877531e-06 1.401971e-10 7.251575e-12 "Dunham+ 2015" Spitzer
+1.1567826e-05 5.3805793e-11 2.2419078e-12 "Cutri+ 2012" WISE
+1.1567826e-05 5.85138e-11 2.6902894e-12 "Cutri+ 2013" WISE
+2.2105962e-05 6.691584e-11 4.2973476e-12 "Cutri+ 2012" WISE
+2.2105962e-05 5.365546e-11 6.4460212e-12 "Cutri+ 2013" WISE
+2.369107e-05 4.489844e-11 4.1156904e-12 "Dunham+ 2015" Spitzer
+2.369107e-05 4.586055e-11 2.1380209e-12 "Luhman+ 2008" Spitzer
+2.369107e-05 4.778477e-11 1.7638674e-12 "Meng+ 2017" Unspecified
+2.369107e-05 4.762442e-11 1.7638674e-12 "Luhman+ 2008" Spitzer
+7e-05 4.9720183e-11 0.0 "Marton+ 2017" Herschel

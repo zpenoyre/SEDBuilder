@@ -1,0 +1,91 @@
+# %ECSV 0.9
+# ---
+# datatype:
+# - {name: lambda, datatype: float32}
+# - {name: flux, datatype: float32}
+# - {name: error, datatype: float32}
+# - {name: source, datatype: object}
+# - {name: telescope, datatype: object}
+# meta: !!omap
+# - {SimbadName: 2MASS J11062942-7724586}
+# - {2MASSID: J11062942-7724586}
+# - {ObjectType: Candidate_YSO}
+# - {StellarType: M6}
+# - {StellarTypeSource: Furlan+ 2009}
+# - {RA: 11 06 29.426}
+# - {DEC: -77 24 58.64}
+# - {CoordSource: Cutri+ 2003}
+# - {Distance: -1.0}
+# - {DistanceSource: ''}
+# - {Teff: -1.0}
+# - {TeffSource: ''}
+# - {Radius: -1.0}
+# - {RadiusSource: ''}
+# - {Luminosity: -1.0}
+# - {LuminositySource: ''}
+# - {Ag: -1.0}
+# - {AgSource: ''}
+# - {Region: Chamaeleon}
+# - {RegionSource: Manoj+ 2011}
+# - {Av: -1.0}
+# - {AvSource: ''}
+# - {Age: -1.0}
+# - {AgeSource: ''}
+# - {Mass: -1.0}
+# - {MassSource: ''}
+# - {Mdot: -1.0}
+# - {MdotSource: ''}
+# - {DiskMass: -1.0}
+# - {DiskMassSource: ''}
+# - {DiskRadius: -1.0}
+# - {DiskRadiusSource: ''}
+# - {BinaryFlag: -1}
+# - {BinaryFlagSource: ''}
+# - {ExtraField: ''}
+# - comments: ['All units for flux+wavelength are SI, I leave it to the user to convert/add astropy units', Meta data about the star is
+#       stored under indivdual fields, 'e.g. if data stored in variable called "dataTable" the R.A. of the star can be found via "dataTable.meta["RA"]".',
+#     Everything intended to be read into astropy tables - either directly or via the getSpectraFromFile() function., See GITHUB-REPO
+#       for more details., Please cite SOME-PAPER if you make use of this tool or data.]
+# - {FileCreated: '2018-09-17'}
+# schema: astropy-2.0
+lambda flux error source telescope
+1.2398743e-06 3.8834616e-10 0.0 "Zacharias+ 2005" 2MASS
+1.2398743e-06 3.8834616e-10 0.0 "Cutri+ 2013" 2MASS
+1.2398743e-06 3.8834616e-10 0.0 "Cutri+ 2012" 2MASS
+1.250886e-06 1.9747994e-10 5.751843e-12 "Esplin+ 2017" 2MASS
+1.250886e-06 3.8920805e-10 0.0 "Cutri+ 2003" 2MASS
+1.631144e-06 1.1613789e-09 2.8188807e-10 "Cutri+ 2003" 2MASS
+1.631144e-06 9.775878e-10 9.245928e-11 "Cutri+ 2003" 2MASS
+1.631144e-06 8.73853e-10 7.892866e-12 "Esplin+ 2017" 2MASS
+1.650619e-06 9.634644e-10 9.139147e-11 "Cutri+ 2012" 2MASS
+1.650619e-06 9.634644e-10 9.139147e-11 "Cutri+ 2013" 2MASS
+1.650619e-06 9.612622e-10 8.9189274e-11 "Luhman+ 2008" 2MASS
+1.650619e-06 9.634644e-10 0.0 "Zacharias+ 2005" 2MASS
+2.1652834e-06 1.2925376e-09 7.038571e-11 "Luhman+ 2008" 2MASS
+2.1652834e-06 1.2989364e-09 0.0 "Zacharias+ 2005" 2MASS
+2.1652834e-06 1.2925376e-09 7.038571e-11 "Cutri+ 2013" 2MASS
+2.1652834e-06 1.2925376e-09 7.038571e-11 "Cutri+ 2012" 2MASS
+2.1915407e-06 1.2555045e-09 0.0 "Esplin+ 2017" 2MASS
+2.1915407e-06 1.2117803e-09 8.744808e-11 "Cutri+ 2003" 2MASS
+2.1915407e-06 1.224273e-09 6.24629e-11 "Cutri+ 2003" 2MASS
+3.35233e-06 6.0864297e-10 1.3347433e-11 "Cutri+ 2013" WISE
+3.35233e-06 6.006345e-10 1.3347433e-11 "Cutri+ 2012" WISE
+3.55244e-06 8.9383145e-10 1.6640479e-11 "Luhman+ 2008" Spitzer
+3.55244e-06 9.033403e-10 4.5167016e-11 "Dunham+ 2015" Spitzer
+4.4961334e-06 6.381332e-10 3.2648675e-11 "Dunham+ 2015" Spitzer
+4.4961334e-06 5.936123e-10 1.03882155e-11 "Luhman+ 2008" Spitzer
+4.6032037e-06 4.7146026e-10 9.910576e-12 "Cutri+ 2013" WISE
+4.6032037e-06 4.672128e-10 8.494779e-12 "Cutri+ 2012" WISE
+5.7349316e-06 3.6668307e-10 1.0033616e-11 "Luhman+ 2008" Spitzer
+5.7349316e-06 3.831017e-10 1.9155086e-11 "Dunham+ 2015" Spitzer
+7.877531e-06 1.9337533e-10 9.668766e-12 "Dunham+ 2015" Spitzer
+7.877531e-06 1.7983905e-10 6.7681364e-12 "Luhman+ 2008" Spitzer
+1.1567826e-05 4.6631685e-11 3.1386712e-12 "Cutri+ 2012" WISE
+1.1567826e-05 5.425417e-11 2.4660987e-12 "Cutri+ 2013" WISE
+2.2105962e-05 2.2039256e-11 4.1131755e-12 "Cutri+ 2012" WISE
+2.2105962e-05 2.6397993e-11 4.5429103e-12 "Cutri+ 2013" WISE
+2.369107e-05 1.26143245e-11 2.351823e-12 "Luhman+ 2008" Spitzer
+2.369107e-05 1.4966146e-11 1.3897136e-12 "Dunham+ 2015" Spitzer
+2.369107e-05 1.2293621e-11 2.2983724e-12 "Luhman+ 2008" Spitzer
+2.369107e-05 1.234707e-11 2.2983724e-12 "Meng+ 2017" Unspecified
+0.000887574 9.520334e-16 6.093013e-16 "Pascucci+ 2016" ALMA

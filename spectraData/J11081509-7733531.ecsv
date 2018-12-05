@@ -1,0 +1,182 @@
+# %ECSV 0.9
+# ---
+# datatype:
+# - {name: lambda, datatype: float32}
+# - {name: flux, datatype: float32}
+# - {name: error, datatype: float32}
+# - {name: source, datatype: object}
+# - {name: telescope, datatype: object}
+# meta: !!omap
+# - {SimbadName: V* HP Cha}
+# - {2MASSID: J11081509-7733531}
+# - {ObjectType: YSO}
+# - {StellarType: G7}
+# - {StellarTypeSource: Ribas+ 2017}
+# - {RA: 11 08 15.099}
+# - {DEC: -77 33 53.16}
+# - {CoordSource: Cutri+ 2003}
+# - {Distance: -1.0}
+# - {DistanceSource: ''}
+# - {Teff: 5530.0}
+# - {TeffSource: Ribas+ 2017}
+# - {Radius: -1.0}
+# - {RadiusSource: ''}
+# - {Luminosity: 5.0}
+# - {LuminositySource: Ribas+ 2017}
+# - {Ag: -1.0}
+# - {AgSource: ''}
+# - {Region: Chamaeleon}
+# - {RegionSource: 'Manoj+ 2011, Ribas+ 2017'}
+# - {Av: 2.8}
+# - {AvSource: Ribas+ 2017}
+# - {Age: -1.0}
+# - {AgeSource: ''}
+# - {Mass: -1.0}
+# - {MassSource: ''}
+# - {Mdot: -1.0}
+# - {MdotSource: ''}
+# - {DiskMass: -1.0}
+# - {DiskMassSource: ''}
+# - {DiskRadius: -1.0}
+# - {DiskRadiusSource: ''}
+# - {BinaryFlag: -1}
+# - {BinaryFlagSource: ''}
+# - {ExtraField: ''}
+# - comments: ['All units for flux+wavelength are SI, I leave it to the user to convert/add astropy units', Meta data about the star is
+#       stored under indivdual fields, 'e.g. if data stored in variable called "dataTable" the R.A. of the star can be found via "dataTable.meta["RA"]".',
+#     Everything intended to be read into astropy tables - either directly or via the getSpectraFromFile() function., See GITHUB-REPO
+#       for more details., Please cite SOME-PAPER if you make use of this tool or data.]
+# - {FileCreated: '2018-09-17'}
+# schema: astropy-2.0
+lambda flux error source telescope
+1.5300658e-07 1.0700092e-09 4.3184806e-10 "Bianchi+ 2011" GALEX
+2.3135652e-07 4.388535e-09 3.4189096e-10 "Bianchi+ 2011" GALEX
+3.533444e-07 8.289797e-07 0.0 "Ducourant+ 2005" 2MASS
+4.445103e-07 1.1979388e-07 0.0 "Nascimbeni+ 2016" 2MASS
+4.445103e-07 3.6135543e-08 0.0 "Girard+ 2011" 2MASS
+4.445103e-07 1.1979388e-07 6.0731997e-09 "Henden+ 2016" 2MASS
+4.6832557e-07 7.2493884e-07 2.1748167e-07 "STScI 2006" POSS
+4.823306e-07 1.6892848e-07 9.026713e-09 "Henden+ 2016" SDSS
+5.049655e-07 1.2353418e-06 2.353032e-08 "Gaia Collaboration 2018" Gaia
+5.049655e-07 1.6588876e-07 3.5295484e-09 "Gaia Collaboration 2018" Gaia
+5.540883e-07 2.7848913e-07 1.3680167e-08 "Henden+ 2016" 2MASS
+5.540883e-07 2.7848913e-07 0.0 "Nascimbeni+ 2016" 2MASS
+5.540883e-07 2.6285466e-07 0.0 "Sartori+ 2003" 2MASS
+5.540883e-07 3.1855248e-07 0.0 "Girard+ 2011" 2MASS
+6.23053e-07 2.573449e-07 0.0 "Gaia Collaboration 2018" Gaia
+6.23053e-07 1.6074397e-06 7.728075e-09 "Gaia Collaboration 2018" Gaia
+6.251302e-07 4.0917348e-07 3.301024e-08 "Henden+ 2016" SDSS
+6.404372e-07 8.4113555e-07 3.3645424e-07 "STScI 2006" POSS
+6.4734695e-07 2.8349291e-08 0.0 "Lopez Marti+ 2013" Cousins
+6.7346116e-07 1.6073204e-07 0.0 "Zacharias+ 2017" Gaia
+6.7346116e-07 2.4341315e-07 0.0 "Gaia Collaboration 2016" Gaia
+6.7346116e-07 1.6073204e-07 0.0 "Gaia Collaboration 2016" Gaia
+7.640198e-07 5.0468867e-07 6.064487e-08 "Henden+ 2016" SDSS
+7.7299666e-07 3.735416e-07 4.518648e-09 "Gaia Collaboration 2018" Gaia
+7.7299666e-07 1.9028531e-06 1.5062161e-08 "Gaia Collaboration 2018" Gaia
+7.842317e-07 7.950969e-07 3.121853e-07 "STScI 2006" POSS
+7.8914144e-07 4.147771e-08 0.0 "Lopez Marti+ 2013" Cousins
+1.2398743e-06 1.0791729e-06 0.0 "Zacharias+ 2017" 2MASS
+1.2398743e-06 1.0908818e-06 2.927232e-08 "Evans+ 2003" 2MASS
+1.2398743e-06 1.0791729e-06 0.0 "Zacharias+ 2005" 2MASS
+1.2398743e-06 1.0791729e-06 0.0 "Girard+ 2011" 2MASS
+1.2398743e-06 1.0791729e-06 0.0 "Zacharias+ 2004" 2MASS
+1.2398743e-06 1.0791729e-06 2.927232e-08 "Roeser+ 2008" 2MASS
+1.2398743e-06 1.0791729e-06 2.927232e-08 "Roeser+ 2010" 2MASS
+1.2398743e-06 1.0791729e-06 2.927232e-08 "Cutri+ 2012" 2MASS
+1.2398743e-06 1.0908818e-06 0.0 "Abrahamyan+ 2015" 2MASS
+1.2398743e-06 1.0791729e-06 2.927232e-08 "Ita+ 2010" 2MASS
+1.2398743e-06 1.0791729e-06 2.927232e-08 "Fedorov+ 2011" 2MASS
+1.2398743e-06 1.0791729e-06 2.927232e-08 "Zacharias+ 2012" 2MASS
+1.2398743e-06 1.0791729e-06 2.927232e-08 "Abrahamyan+ 2015" 2MASS
+1.2398743e-06 1.1182027e-06 0.0 "Ducourant+ 2005" 2MASS
+1.2398743e-06 1.0791729e-06 2.927232e-08 "Ita+ 2010" 2MASS
+1.2398743e-06 1.0791729e-06 2.927232e-08 "Cutri+ 2013" 2MASS
+1.250886e-06 1.0813465e-06 2.8759214e-08 "Cutri+ 2003" 2MASS
+1.250886e-06 1.0813465e-06 3.0676496e-08 "Lopez Marti+ 2013" 2MASS
+1.250886e-06 1.3976978e-06 0.0 "Esplin+ 2017" 2MASS
+1.631144e-06 9.49399e-07 1.382379e-06 "Lopez Marti+ 2013" 2MASS
+1.631144e-06 9.49399e-07 0.0 "Cutri+ 2003" 2MASS
+1.631144e-06 1.5560221e-06 0.0 "Esplin+ 2017" 2MASS
+1.650619e-06 9.3593684e-07 0.0 "Cutri+ 2013" 2MASS
+1.650619e-06 9.3593684e-07 0.0 "Zacharias+ 2017" 2MASS
+1.650619e-06 9.612621e-07 0.0 "Ducourant+ 2005" 2MASS
+1.650619e-06 9.128136e-07 0.0 "Abrahamyan+ 2015" 2MASS
+1.650619e-06 9.128136e-07 0.0 "Evans+ 2003" 2MASS
+1.650619e-06 9.3593684e-07 0.0 "Abrahamyan+ 2015" 2MASS
+1.650619e-06 9.3593684e-07 0.0 "Fedorov+ 2011" 2MASS
+1.650619e-06 9.3593684e-07 0.0 "Cutri+ 2012" 2MASS
+1.650619e-06 9.3593684e-07 9.766776e-07 "Zacharias+ 2012" 2MASS
+1.650619e-06 9.3593684e-07 0.0 "Roeser+ 2010" 2MASS
+1.650619e-06 9.3593684e-07 0.0 "Zacharias+ 2005" 2MASS
+1.650619e-06 9.3593684e-07 0.0 "Zacharias+ 2004" 2MASS
+1.650619e-06 9.3593684e-07 0.0 "Girard+ 2011" 2MASS
+1.650619e-06 9.3593684e-07 0.0 "Roeser+ 2008" 2MASS
+2.1652834e-06 7.550467e-07 0.0 "Abrahamyan+ 2015" 2MASS
+2.1652834e-06 7.4864795e-07 0.0 "Ducourant+ 2005" 2MASS
+2.1652834e-06 7.678441e-07 0.0 "Roeser+ 2010" 2MASS
+2.1652834e-06 7.678441e-07 0.0 "Roeser+ 2008" 2MASS
+2.1652834e-06 7.678441e-07 0.0 "Fedorov+ 2011" 2MASS
+2.1652834e-06 7.678441e-07 0.0 "Girard+ 2011" 2MASS
+2.1652834e-06 7.678441e-07 0.0 "Zacharias+ 2004" 2MASS
+2.1652834e-06 7.678441e-07 7.998376e-07 "Zacharias+ 2012" 2MASS
+2.1652834e-06 7.678441e-07 0.0 "Zacharias+ 2005" 2MASS
+2.1652834e-06 7.678441e-07 0.0 "Abrahamyan+ 2015" 2MASS
+2.1652834e-06 7.678441e-07 0.0 "Cutri+ 2012" 2MASS
+2.1652834e-06 7.550467e-07 0.0 "Evans+ 2003" 2MASS
+2.1652834e-06 7.678441e-07 0.0 "Cutri+ 2013" 2MASS
+2.1915407e-06 7.2456976e-07 0.0 "Cutri+ 2003" 2MASS
+2.1915407e-06 1.374184e-06 0.0 "Esplin+ 2017" 2MASS
+2.1915407e-06 7.2456976e-07 1.0556231e-06 "Lopez Marti+ 2013" 2MASS
+3.35233e-06 5.9529555e-07 0.0 "Abrahamyan+ 2015" WISE
+3.35233e-06 5.97965e-07 3.4703326e-08 "Cutri+ 2012" WISE
+3.35233e-06 5.97965e-07 3.4703326e-08 "Abrahamyan+ 2015" WISE
+3.35233e-06 4.0309249e-07 8.00846e-09 "Cutri+ 2013" WISE
+4.4961334e-06 3.8881606e-07 3.264868e-08 "Evans+ 2003" Spitzer
+4.6032037e-06 5.2101313e-07 4.3889692e-08 "Cutri+ 2013" WISE
+4.6032037e-06 5.719818e-07 1.9821151e-08 "Cutri+ 2012" WISE
+4.6032037e-06 5.719818e-07 1.9821151e-08 "Abrahamyan+ 2015" WISE
+4.6032037e-06 5.748134e-07 0.0 "Abrahamyan+ 2015" WISE
+5.7349316e-06 2.253003e-07 6.3850285e-09 "Luhman+ 2008" Spitzer
+7.877531e-06 1.6436903e-07 4.350945e-09 "Luhman+ 2008" Spitzer
+7.877531e-06 2.0256066e-07 1.3052834e-08 "Evans+ 2003" Spitzer
+8.615985e-06 2.667198e-07 1.1315386e-08 "Abrahamyan+ 2015" AKARI
+8.615985e-06 2.667198e-07 1.1315386e-08 "ISAS/JAXA 2010" AKARI
+1.1567826e-05 1.7688653e-07 1.3451447e-09 "Abrahamyan+ 2015" WISE
+1.1567826e-05 1.9325246e-07 0.0 "Abrahamyan+ 2015" WISE
+1.1567826e-05 1.7800748e-07 2.2419078e-09 "Cutri+ 2013" WISE
+1.1567826e-05 1.7688653e-07 1.3451447e-09 "Cutri+ 2012" WISE
+1.15982375e-05 2.2747697e-07 0.0 "Abrahamyan+ 2015" IRAS
+1.15982375e-05 2.319373e-07 0.0 "Abrahamyan+ 2015" IRAS
+1.15982375e-05 2.319373e-07 0.0 "Spangler+ 2001" IRAS
+1.15982375e-05 2.2747697e-07 6.6904997e-09 "Moshir+ 1989" IRAS
+1.840265e-05 8.309279e-08 2.391797e-09 "ISAS/JAXA 2010" AKARI
+1.840265e-05 8.309279e-08 2.391797e-09 "Abrahamyan+ 2015" AKARI
+2.2105962e-05 7.3668815e-08 1.2278136e-09 "Cutri+ 2013" WISE
+2.2105962e-05 7.3668815e-08 1.2278136e-09 "Cutri+ 2012" WISE
+2.3896766e-05 7.670009e-08 0.0 "Abrahamyan+ 2015" IRAS
+2.3896766e-05 7.722543e-08 0.0 "Spangler+ 2001" IRAS
+2.3896766e-05 7.670009e-08 3.1520584e-09 "Moshir+ 1989" IRAS
+2.3896766e-05 7.722543e-08 0.0 "Abrahamyan+ 2015" IRAS
+6.189268e-05 7.494707e-09 0.0 "Spangler+ 2001" IRAS
+6.189268e-05 7.494707e-09 0.0 "Abrahamyan+ 2015" IRAS
+6.189268e-05 9.397751e-09 0.0 "Abrahamyan+ 2015" IRAS
+6.189268e-05 9.397751e-09 2.0361794e-09 "Moshir+ 1989" IRAS
+7e-05 4.601931e-09 5.7116395e-12 "Marton+ 2017" Herschel
+7e-05 4.2857144e-09 6.122449e-10 "Ribas+ 2017" Herschel
+1e-04 1.5e-09 3e-10 "Ribas+ 2017" Herschel
+1e-04 1.6152534e-09 8.71734e-12 "Marton+ 2017" Herschel
+0.00010201999 6.225932e-09 0.0 "Abrahamyan+ 2015" IRAS
+0.00010201999 2.997671e-09 0.0 "Abrahamyan+ 2015" IRAS
+0.00010201999 6.225932e-09 1.2394218e-09 "Moshir+ 1989" IRAS
+0.00010201999 2.997671e-09 0.0 "Spangler+ 2001" IRAS
+0.00016 4.6884563e-10 4.37793e-12 "Marton+ 2017" Herschel
+0.00016 4.5703125e-10 9.375e-11 "Ribas+ 2017" Herschel
+0.00025 1.056e-10 1.92e-11 "Ribas+ 2017" Herschel
+0.00035 3.1836735e-11 7.346939e-12 "Ribas+ 2017" Herschel
+0.0005 7.2e-12 1.2e-12 "Ribas+ 2017" Herschel
+0.0008705998 6.649567e-13 0.0 "Belloche+ 2011" APEX
+0.0008705998 6.8474707e-13 0.0 "Belloche+ 2011" APEX
+0.0008705998 6.8474707e-13 0.0 "Belloche+ 2011" APEX
+0.0008705998 6.649567e-13 0.0 "Belloche+ 2011" APEX
+0.000887574 7.9589986e-13 0.0 "Pascucci+ 2016" ALMA

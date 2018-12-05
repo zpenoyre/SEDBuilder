@@ -1,0 +1,156 @@
+# %ECSV 0.9
+# ---
+# datatype:
+# - {name: lambda, datatype: float32}
+# - {name: flux, datatype: float32}
+# - {name: error, datatype: float32}
+# - {name: source, datatype: object}
+# - {name: telescope, datatype: object}
+# meta: !!omap
+# - {SimbadName: V* WW Cha}
+# - {2MASSID: J11100010-7634578}
+# - {ObjectType: Orion_V*}
+# - {StellarType: K5}
+# - {StellarTypeSource: Ribas+ 2017}
+# - {RA: 11 10 00.0791}
+# - {DEC: -76 34 57.971}
+# - {CoordSource: Gaia Collaboration 2018}
+# - {Distance: 192.07867542545426}
+# - {DistanceSource: Gaia Collaboration 2018}
+# - {Teff: 3465.0}
+# - {TeffSource: Gaia Collaboration 2018}
+# - {Radius: 2.5457327}
+# - {RadiusSource: Gaia Collaboration 2018}
+# - {Luminosity: 0.84165335}
+# - {LuminositySource: Gaia Collaboration 2018}
+# - {Ag: 2.748}
+# - {AgSource: Gaia Collaboration 2018}
+# - {Region: Chamaeleon}
+# - {RegionSource: 'Manoj+ 2011, Ribas+ 2017'}
+# - {Av: 3.9}
+# - {AvSource: Ribas+ 2017}
+# - {Age: -1.0}
+# - {AgeSource: ''}
+# - {Mass: -1.0}
+# - {MassSource: ''}
+# - {Mdot: -1.0}
+# - {MdotSource: ''}
+# - {DiskMass: -1.0}
+# - {DiskMassSource: ''}
+# - {DiskRadius: -1.0}
+# - {DiskRadiusSource: ''}
+# - {BinaryFlag: -1}
+# - {BinaryFlagSource: ''}
+# - {ExtraField: ''}
+# - comments: ['All units for flux+wavelength are SI, I leave it to the user to convert/add astropy units', Meta data about the star is
+#       stored under indivdual fields, 'e.g. if data stored in variable called "dataTable" the R.A. of the star can be found via "dataTable.meta["RA"]".',
+#     Everything intended to be read into astropy tables - either directly or via the getSpectraFromFile() function., See GITHUB-REPO
+#       for more details., Please cite SOME-PAPER if you make use of this tool or data.]
+# - {FileCreated: '2018-09-17'}
+# schema: astropy-2.0
+lambda flux error source telescope
+3.4435658e-07 5.312804e-08 0.0 "Page+ 2014" XMM
+3.4435658e-07 5.312804e-08 0.0 "Page+ 2014" XMM
+4.445103e-07 5.0711225e-08 0.0 "Nascimbeni+ 2016" 2MASS
+4.445103e-07 5.0711225e-08 2.0193392e-08 "Riedel+ 2017" 2MASS
+4.445103e-07 5.0711225e-08 2.0193392e-08 "Henden+ 2016" 2MASS
+4.445103e-07 1.4545314e-09 0.0 "Girard+ 2011" 2MASS
+4.823306e-07 7.298742e-08 2.6564328e-08 "Riedel+ 2017" SDSS
+4.823306e-07 7.272951e-08 2.6435375e-08 "Henden+ 2016" SDSS
+5.049655e-07 1.611827e-07 7.059097e-09 "Gaia Collaboration 2018" Gaia
+5.540883e-07 1.3777883e-07 5.8629293e-09 "Riedel+ 2017" 2MASS
+5.540883e-07 1.3777883e-07 0.0 "Girard+ 2011" 2MASS
+5.540883e-07 1.1725859e-07 0.0 "Nascimbeni+ 2016" 2MASS
+5.540883e-07 1.1725859e-07 3.9086196e-08 "Henden+ 2016" 2MASS
+5.540883e-07 1.7197925e-07 0.0 "Mermilliod 1987" 2MASS
+6.23053e-07 3.2071512e-07 3.09123e-09 "Gaia Collaboration 2018" Gaia
+6.251302e-07 2.0113217e-07 5.6040644e-08 "Henden+ 2016" SDSS
+6.251302e-07 2.0266752e-07 5.6040644e-08 "Riedel+ 2017" SDSS
+6.7346116e-07 3.161725e-07 0.0 "Gaia Collaboration 2016" Gaia
+6.7346116e-07 3.161725e-07 0.0 "Zacharias+ 2017" Gaia
+7.640198e-07 3.052801e-07 1.063855e-07 "Riedel+ 2017" SDSS
+7.640198e-07 3.0425224e-07 1.063855e-07 "Henden+ 2016" SDSS
+7.7299666e-07 4.955451e-07 1.4560088e-08 "Gaia Collaboration 2018" Gaia
+1.2398743e-06 1.0069679e-06 2.7320834e-08 "Motch+ 2016" 2MASS
+1.2398743e-06 1.0069679e-06 2.5369346e-08 "Ita+ 2010" 2MASS
+1.2398743e-06 1.0069679e-06 2.5369346e-08 "Cutri+ 2013" 2MASS
+1.2398743e-06 1.0069679e-06 2.5369346e-08 "Cutri+ 2012" 2MASS
+1.2398743e-06 1.0069679e-06 0.0 "Motch+ 2016" 2MASS
+1.2398743e-06 1.0089193e-06 2.7320834e-08 "Gutermuth+ 2009" 2MASS
+1.2398743e-06 1.0069679e-06 0.0 "Zacharias+ 2017" 2MASS
+1.2398743e-06 1.0069679e-06 0.0 "Girard+ 2011" 2MASS
+1.2398743e-06 1.0069679e-06 2.5369346e-08 "Marton+ 2016" 2MASS
+1.2398743e-06 1.0069679e-06 2.7320834e-08 "Zacharias+ 2012" 2MASS
+1.2398743e-06 1.0069679e-06 0.0 "Zacharias+ 2005" 2MASS
+1.2398743e-06 1.0069679e-06 2.5369346e-08 "Roeser+ 2010" 2MASS
+1.2398743e-06 1.0069679e-06 2.5369346e-08 "Roeser+ 2008" 2MASS
+1.250886e-06 1.0084898e-06 2.4924654e-08 "Cutri+ 2003" 2MASS
+1.250886e-06 1.0123243e-06 2.8759214e-08 "Esplin+ 2017" 2MASS
+1.250886e-06 1.0084898e-06 2.4924654e-08 "Motch+ 2016" 2MASS
+1.250886e-06 9.643924e-07 1.1503686e-08 "Cutri+ 2003" 2MASS
+1.631144e-06 1.533471e-06 1.12755224e-07 "Motch+ 2016" 2MASS
+1.631144e-06 1.533471e-06 1.12755224e-07 "Cutri+ 2003" 2MASS
+1.631144e-06 1.533471e-06 1.12755224e-07 "Esplin+ 2017" 2MASS
+1.650619e-06 1.5195209e-06 0.0 "Zacharias+ 2005" 2MASS
+1.650619e-06 1.5195209e-06 1.1011021e-07 "Roeser+ 2008" 2MASS
+1.650619e-06 1.5195209e-06 1.1011021e-07 "Marton+ 2016" 2MASS
+1.650619e-06 1.5085099e-06 1.1011021e-07 "Gutermuth+ 2009" 2MASS
+1.650619e-06 1.5195209e-06 1.1011021e-07 "Roeser+ 2010" 2MASS
+1.650619e-06 1.5195209e-06 1.1011021e-07 "Ita+ 2010" 2MASS
+1.650619e-06 1.5195209e-06 1.1011021e-07 "Motch+ 2016" 2MASS
+1.650619e-06 1.5195209e-06 0.0 "Zacharias+ 2017" 2MASS
+1.650619e-06 1.5195209e-06 1.1011021e-07 "Cutri+ 2013" 2MASS
+1.650619e-06 1.5195209e-06 1.1011021e-07 "Zacharias+ 2012" 2MASS
+1.650619e-06 1.5195209e-06 0.0 "Girard+ 2011" 2MASS
+1.650619e-06 1.5195209e-06 1.1011021e-07 "Cutri+ 2012" 2MASS
+2.1652834e-06 1.5932766e-06 0.0 "Girard+ 2011" 2MASS
+2.1652834e-06 1.5932766e-06 7.678441e-08 "Cutri+ 2012" 2MASS
+2.1652834e-06 1.5932766e-06 7.038571e-08 "Motch+ 2016" 2MASS
+2.1652834e-06 1.5932766e-06 7.678441e-08 "Ita+ 2010" 2MASS
+2.1652834e-06 1.5932766e-06 7.678441e-08 "Roeser+ 2008" 2MASS
+2.1652834e-06 1.5932766e-06 7.678441e-08 "Cutri+ 2013" 2MASS
+2.1652834e-06 1.5932766e-06 7.678441e-08 "Marton+ 2016" 2MASS
+2.1652834e-06 1.5932766e-06 7.038571e-08 "Zacharias+ 2012" 2MASS
+2.1652834e-06 1.5932766e-06 7.678441e-08 "Roeser+ 2010" 2MASS
+2.1652834e-06 1.5932766e-06 0.0 "Zacharias+ 2005" 2MASS
+2.1915407e-06 1.5053561e-06 7.495549e-08 "Motch+ 2016" 2MASS
+2.1915407e-06 1.5053561e-06 7.495549e-08 "Riedel+ 2017" 2MASS
+2.1915407e-06 1.5053561e-06 6.87092e-08 "Esplin+ 2017" 2MASS
+2.1915407e-06 1.5053561e-06 7.495549e-08 "Cutri+ 2003" 2MASS
+3.35233e-06 9.10295e-07 1.5216074e-07 "Riedel+ 2017" WISE
+3.35233e-06 9.10295e-07 1.5216074e-07 "Cutri+ 2013" WISE
+3.35233e-06 9.4232877e-07 6.13982e-08 "Cutri+ 2012" WISE
+3.55244e-06 4.397841e-07 4.754422e-09 "Gutermuth+ 2009" Spitzer
+4.4961334e-06 3.4874722e-07 2.9680614e-09 "Gutermuth+ 2009" Spitzer
+4.6032037e-06 7.418774e-07 1.14679516e-07 "Cutri+ 2013" WISE
+4.6032037e-06 7.418774e-07 1.14679516e-07 "Riedel+ 2017" WISE
+4.6032037e-06 9.981366e-07 5.3800267e-08 "Cutri+ 2012" WISE
+5.7349316e-06 3.4114296e-07 2.7364406e-09 "Gutermuth+ 2009" Spitzer
+5.7349316e-06 3.4752796e-07 1.0033617e-08 "Luhman+ 2008" Spitzer
+7.877531e-06 1.8660718e-07 1.9337532e-09 "Gutermuth+ 2009" Spitzer
+7.877531e-06 1.7017028e-07 6.2846977e-09 "Luhman+ 2008" Spitzer
+8.615985e-06 1.4629177e-07 6.0618137e-09 "ISAS/JAXA 2010" AKARI
+1.1567826e-05 9.9989094e-08 8.967631e-10 "Cutri+ 2012" WISE
+1.1567826e-05 1.0335196e-07 1.3451447e-09 "Riedel+ 2017" WISE
+1.1567826e-05 1.0335196e-07 1.3451447e-09 "Cutri+ 2013" WISE
+1.840265e-05 6.014926e-08 2.0374566e-09 "ISAS/JAXA 2010" AKARI
+2.2105962e-05 6.446022e-08 1.2278136e-09 "Cutri+ 2013" WISE
+2.2105962e-05 6.691584e-08 1.2278136e-09 "Cutri+ 2012" WISE
+2.2105962e-05 6.446022e-08 1.2278136e-09 "Riedel+ 2017" WISE
+2.369107e-05 2.7152867e-08 2.672526e-10 "Gutermuth+ 2009" Spitzer
+7e-05 1.8708027e-08 1.7741134e-09 "Marton+ 2017" Herschel
+7e-05 1.6530612e-08 3.0612244e-09 "Ribas+ 2017" Herschel
+1e-04 9.146124e-09 1.678157e-10 "Marton+ 2017" Herschel
+1e-04 1.11e-08 2.1e-09 "Ribas+ 2017" Herschel
+0.00016 3.515625e-09 7.03125e-10 "Ribas+ 2017" Herschel
+0.00016 3.4150787e-09 9.8576335e-11 "Marton+ 2017" Herschel
+0.00025 7.2e-10 1.44e-10 "Ribas+ 2017" Herschel
+0.00035 2.2040816e-10 4.897959e-11 "Ribas+ 2017" Herschel
+0.0005 6e-11 1.2e-11 "Ribas+ 2017" Herschel
+0.0008705998 4.6309484e-12 0.0 "Belloche+ 2011" APEX
+0.0008705998 5.937113e-12 0.0 "Belloche+ 2011" APEX
+0.0008705998 5.937113e-12 0.0 "Belloche+ 2011" APEX
+0.0008705998 5.937113e-12 0.0 "Belloche+ 2011" APEX
+0.0008705998 4.6309484e-12 0.0 "Belloche+ 2011" APEX
+0.0008705998 4.6309484e-12 0.0 "Belloche+ 2011" APEX
+0.000887574 5.1790616e-12 0.0 "Pascucci+ 2016" ALMA

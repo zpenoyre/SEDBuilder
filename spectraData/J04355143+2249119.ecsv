@@ -1,0 +1,120 @@
+# %ECSV 0.9
+# ---
+# datatype:
+# - {name: lambda, datatype: float32}
+# - {name: flux, datatype: float32}
+# - {name: error, datatype: float32}
+# - {name: source, datatype: object}
+# - {name: telescope, datatype: object}
+# meta: !!omap
+# - {SimbadName: '[BLH2002] KPNO-Tau  9'}
+# - {2MASSID: J04355143+2249119}
+# - {ObjectType: brownD*}
+# - {StellarType: M8.5}
+# - {StellarTypeSource: Bulger+ 2014}
+# - {RA: 04 35 51.4277}
+# - {DEC: +22 49 11.868}
+# - {CoordSource: Gaia Collaboration 2018}
+# - {Distance: 161.90661226604493}
+# - {DistanceSource: Gaia Collaboration 2018}
+# - {Teff: 2555.0}
+# - {TeffSource: Bulger+ 2014}
+# - {Radius: 0.522}
+# - {RadiusSource: Bulger+ 2014}
+# - {Luminosity: -1.0}
+# - {LuminositySource: ''}
+# - {Ag: -1.0}
+# - {AgSource: ''}
+# - {Region: Taurus}
+# - {RegionSource: Bulger+ 2014}
+# - {Av: 0.7}
+# - {AvSource: Bulger+ 2014}
+# - {Age: -1.0}
+# - {AgeSource: ''}
+# - {Mass: -1.0}
+# - {MassSource: ''}
+# - {Mdot: -1.0}
+# - {MdotSource: ''}
+# - {DiskMass: -1.0}
+# - {DiskMassSource: ''}
+# - {DiskRadius: -1.0}
+# - {DiskRadiusSource: ''}
+# - {BinaryFlag: -1}
+# - {BinaryFlagSource: ''}
+# - {ExtraField: ''}
+# - comments: ['All units for flux+wavelength are SI, I leave it to the user to convert/add astropy units', Meta data about the star is
+#       stored under indivdual fields, 'e.g. if data stored in variable called "dataTable" the R.A. of the star can be found via "dataTable.meta["RA"]".',
+#     Everything intended to be read into astropy tables - either directly or via the getSpectraFromFile() function., See GITHUB-REPO
+#       for more details., Please cite SOME-PAPER if you make use of this tool or data.]
+# - {FileCreated: '2018-09-17'}
+# schema: astropy-2.0
+lambda flux error source telescope
+4.6832557e-07 6.032038e-10 3.5015915e-10 "STScI 2006" POSS
+4.775549e-07 6.3536267e-11 0.0 "Chambers+ 2016" Pan-STARRS
+5.049655e-07 1.10710156e-10 2.4589185e-11 "Gaia Collaboration 2018" Gaia
+6.129955e-07 2.602701e-10 0.0 "Chambers+ 2016" Pan-STARRS
+6.23053e-07 1.4683342e-10 1.545615e-12 "Gaia Collaboration 2018" Gaia
+6.7346116e-07 1.4221148e-10 0.0 "Gaia Collaboration 2016" Gaia
+7.48503e-07 1.579633e-10 1.6064065e-12 "Chambers+ 2016" Pan-STARRS
+7.7299666e-07 4.1370737e-10 1.3053873e-11 "Gaia Collaboration 2018" Gaia
+7.842317e-07 3.2730677e-10 1.8340886e-10 "STScI 2006" POSS
+8.6580087e-07 5.522864e-10 4.002075e-12 "Chambers+ 2016" Pan-STARRS
+9.603073e-07 1.1483532e-09 1.6265626e-11 "Chambers+ 2016" Pan-STARRS
+1.2398743e-06 1.9905178e-09 0.0 "Zacharias+ 2005" 2MASS
+1.2398743e-06 1.9905178e-09 7.805952e-11 "Huber+ 2017" 2MASS
+1.2398743e-06 1.9710031e-09 0.0 "Tottle+ 2015" 2MASS
+1.2398743e-06 1.9905178e-09 7.805952e-11 "Cutri+ 2012" 2MASS
+1.2398743e-06 1.9905178e-09 7.805952e-11 "Cutri+ 2013" 2MASS
+1.2398743e-06 1.9710031e-09 0.0 "Kraus+ 2009" 2MASS
+1.250886e-06 2.013145e-09 1.3420967e-10 "Cutri+ 2003" 2MASS
+1.250886e-06 1.9939723e-09 7.669124e-11 "Cutri+ 2003" 2MASS
+1.631144e-06 1.6011241e-09 5.6377607e-11 "Cutri+ 2003" 2MASS
+1.631144e-06 1.4545424e-09 9.020417e-11 "Cutri+ 2003" 2MASS
+1.650619e-06 1.585587e-09 0.0 "Tottle+ 2015" 2MASS
+1.650619e-06 1.585587e-09 5.5055103e-11 "Huber+ 2017" 2MASS
+1.650619e-06 1.585587e-09 5.5055103e-11 "Cutri+ 2012" 2MASS
+1.650619e-06 1.585587e-09 0.0 "Zacharias+ 2005" 2MASS
+1.650619e-06 1.585587e-09 5.5055103e-11 "Cutri+ 2013" 2MASS
+2.1652834e-06 9.150142e-10 4.4790907e-11 "Huber+ 2017" 2MASS
+2.1652834e-06 9.086155e-10 0.0 "Kraus+ 2017" 2MASS
+2.1652834e-06 9.086155e-10 0.0 "Tottle+ 2015" 2MASS
+2.1652834e-06 9.150142e-10 0.0 "Zacharias+ 2005" 2MASS
+2.1652834e-06 9.150142e-10 4.4790907e-11 "Cutri+ 2013" 2MASS
+2.1652834e-06 9.150142e-10 4.4790907e-11 "Cutri+ 2012" 2MASS
+2.1915407e-06 8.557418e-10 7.4955486e-11 "Cutri+ 2003" 2MASS
+2.1915407e-06 8.6198815e-10 4.372404e-11 "Cutri+ 2003" 2MASS
+2.2024815e-06 8.658143e-10 0.0 "Lawrence+ 2012" UKIDSS
+2.2024815e-06 8.658143e-10 0.0 "Lawrence+ 2012" UKIDSS
+3.35233e-06 2.2957586e-10 6.4067683e-12 "Esplin+ 2014" WISE
+3.35233e-06 2.293089e-10 6.4067683e-12 "Cutri+ 2012" WISE
+3.35233e-06 2.3117755e-10 5.872871e-12 "Cutri+ 2013" WISE
+3.35233e-06 2.3224535e-10 8.00846e-12 "Bulger+ 2014" WISE
+3.55244e-06 2.3510618e-10 1.3074662e-11 "Rebull+ 2010" Spitzer
+3.55244e-06 2.4009833e-10 4.754422e-12 "Esplin+ 2014" Spitzer
+3.55244e-06 2.4009833e-10 4.754422e-12 "Bulger+ 2014" Spitzer
+4.4961334e-06 1.06850216e-10 2.9680613e-12 "Bulger+ 2014" Spitzer
+4.4961334e-06 1.0521778e-10 1.92924e-12 "Esplin+ 2014" Spitzer
+4.4961334e-06 1.0417896e-10 5.7877197e-12 "Rebull+ 2010" Spitzer
+4.6032037e-06 9.768997e-11 4.2473893e-12 "Bulger+ 2014" WISE
+4.6032037e-06 9.386731e-11 3.1147526e-12 "Cutri+ 2013" WISE
+4.6032037e-06 9.6698906e-11 3.9642304e-12 "Cutri+ 2012" WISE
+4.6032037e-06 9.698206e-11 3.5394912e-12 "Esplin+ 2014" WISE
+5.7349316e-06 4.2506044e-11 1.5506498e-12 "Esplin+ 2014" Spitzer
+5.7349316e-06 4.1958756e-11 1.8242938e-12 "Bulger+ 2014" Spitzer
+5.7349316e-06 3.4752798e-11 3.831017e-12 "Rebull+ 2010" Spitzer
+7.877531e-06 1.3052833e-11 7.2515746e-13 "Esplin+ 2014" Spitzer
+7.877531e-06 1.3391242e-11 2.1271286e-12 "Rebull+ 2010" Spitzer
+7.877531e-06 1.3536273e-11 9.668765e-13 "Bulger+ 2014" Spitzer
+1.1567826e-05 1.4684497e-11 3.5870523e-12 "Cutri+ 2012" WISE
+1.1567826e-05 1.5693355e-11 4.4838157e-12 "Bulger+ 2014" WISE
+1.1567826e-05 8.27264e-12 0.0 "Cutri+ 2013" WISE
+2.2105962e-05 3.793944e-11 7.121319e-12 "Cutri+ 2012" WISE
+2.2105962e-05 3.683441e-11 6.1390684e-12 "Bulger+ 2014" WISE
+2.2105962e-05 1.7496345e-11 7.980788e-12 "Cutri+ 2013" WISE
+2.369107e-05 1.6195508e-12 0.0 "Rebull+ 2010" Spitzer
+2.369107e-05 1.6035158e-12 0.0 "Bulger+ 2014" Spitzer
+7.004763e-05 4.279888e-12 0.0 "Bulger+ 2014" Herschel
+7.146941e-05 2.0615222e-10 0.0 "Rebull+ 2010" Spitzer
+7.146941e-05 2.0673951e-10 0.0 "Bulger+ 2014" Spitzer
+0.00016011101 1.1936556e-11 0.0 "Bulger+ 2014" Herschel
+0.0013008976 3.5453983e-15 0.0 "Bulger+ 2014" Unspecified

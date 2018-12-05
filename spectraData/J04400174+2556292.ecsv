@@ -1,0 +1,127 @@
+# %ECSV 0.9
+# ---
+# datatype:
+# - {name: lambda, datatype: float32}
+# - {name: flux, datatype: float32}
+# - {name: error, datatype: float32}
+# - {name: source, datatype: object}
+# - {name: telescope, datatype: object}
+# meta: !!omap
+# - {SimbadName: 2MASS J04400174+2556292}
+# - {2MASSID: J04400174+2556292}
+# - {ObjectType: brownD*}
+# - {StellarType: M5.75}
+# - {StellarTypeSource: Bulger+ 2014}
+# - {RA: 04 40 01.745}
+# - {DEC: +25 56 29.23}
+# - {CoordSource: Cutri+ 2003}
+# - {Distance: -1.0}
+# - {DistanceSource: ''}
+# - {Teff: 3024.0}
+# - {TeffSource: Bulger+ 2014}
+# - {Radius: 1.318}
+# - {RadiusSource: Bulger+ 2014}
+# - {Luminosity: -1.0}
+# - {LuminositySource: ''}
+# - {Ag: -1.0}
+# - {AgSource: ''}
+# - {Region: Taurus}
+# - {RegionSource: Bulger+ 2014}
+# - {Av: 2.6}
+# - {AvSource: Bulger+ 2014}
+# - {Age: -1.0}
+# - {AgeSource: ''}
+# - {Mass: -1.0}
+# - {MassSource: ''}
+# - {Mdot: -1.0}
+# - {MdotSource: ''}
+# - {DiskMass: -1.0}
+# - {DiskMassSource: ''}
+# - {DiskRadius: -1.0}
+# - {DiskRadiusSource: ''}
+# - {BinaryFlag: -1}
+# - {BinaryFlagSource: ''}
+# - {ExtraField: ''}
+# - comments: ['All units for flux+wavelength are SI, I leave it to the user to convert/add astropy units', Meta data about the star is
+#       stored under indivdual fields, 'e.g. if data stored in variable called "dataTable" the R.A. of the star can be found via "dataTable.meta["RA"]".',
+#     Everything intended to be read into astropy tables - either directly or via the getSpectraFromFile() function., See GITHUB-REPO
+#       for more details., Please cite SOME-PAPER if you make use of this tool or data.]
+# - {FileCreated: '2018-09-17'}
+# schema: astropy-2.0
+lambda flux error source telescope
+4.775549e-07 2.407275e-12 0.0 "Chambers+ 2016" Pan-STARRS
+6.129955e-07 5.2772557e-11 0.0 "Chambers+ 2016" Pan-STARRS
+6.23053e-07 2.6352737e-10 5.4096523e-12 "Gaia Collaboration 2018" Gaia
+6.23053e-07 3.6553793e-10 6.18246e-12 "Gaia Collaboration 2018" Gaia
+7.48503e-07 4.926313e-10 5.354688e-12 "Chambers+ 2016" Pan-STARRS
+7.842317e-07 1.0438695e-09 4.3413267e-10 "STScI 2006" POSS
+8.6580087e-07 1.8329503e-09 1.60083e-11 "Chambers+ 2016" Pan-STARRS
+8.8230104e-07 2.1465592e-09 1.5415147e-11 "Lawrence+ 2012" UKIDSS
+8.8230104e-07 2.1465592e-09 1.5415147e-11 "Lawrence+ 2012" UKIDSS
+9.603073e-07 4.3917194e-09 6.5062504e-11 "Chambers+ 2016" Pan-STARRS
+1.0312114e-06 6.4886416e-09 2.821148e-11 "Lawrence+ 2012" UKIDSS
+1.0312114e-06 6.4886416e-09 2.821148e-11 "Lawrence+ 2012" UKIDSS
+1.2398743e-06 1.5865599e-08 0.0 "Tottle+ 2015" 2MASS
+1.2398743e-06 1.5865599e-08 3.7078277e-10 "Cutri+ 2012" 2MASS
+1.2398743e-06 1.5865599e-08 3.7078277e-10 "Cutri+ 2013" 2MASS
+1.2398743e-06 1.5865599e-08 3.7078277e-10 "Huber+ 2017" 2MASS
+1.2398743e-06 1.5865599e-08 0.0 "Zacharias+ 2005" 2MASS
+1.2491672e-06 1.5399714e-08 1.9225607e-11 "Lawrence+ 2012" UKIDSS
+1.2491672e-06 1.5399714e-08 1.9225607e-11 "Lawrence+ 2012" UKIDSS
+1.250886e-06 1.5913432e-08 3.642834e-10 "Cutri+ 2003" 2MASS
+1.250886e-06 1.5970949e-08 2.3007371e-10 "Cutri+ 2003" 2MASS
+1.631144e-06 2.5820945e-08 4.5102086e-10 "Cutri+ 2003" 2MASS
+1.631144e-06 2.6497476e-08 5.6377614e-10 "Cutri+ 2003" 2MASS
+1.650619e-06 2.5545567e-08 0.0 "Tottle+ 2015" 2MASS
+1.650619e-06 2.5545567e-08 4.4044082e-10 "Cutri+ 2012" 2MASS
+1.650619e-06 2.5545567e-08 4.4044082e-10 "Huber+ 2017" 2MASS
+1.650619e-06 2.5545567e-08 4.4044082e-10 "Cutri+ 2013" 2MASS
+1.650619e-06 2.5545567e-08 0.0 "Zacharias+ 2005" 2MASS
+2.1652834e-06 2.137166e-08 3.839221e-10 "Cutri+ 2013" 2MASS
+2.1652834e-06 2.1435648e-08 0.0 "Luhman+ 2006" 2MASS
+2.1652834e-06 2.1435648e-08 0.0 "Luhman+ 2006" 2MASS
+2.1652834e-06 2.1435648e-08 0.0 "Tottle+ 2015" 2MASS
+2.1652834e-06 2.1435648e-08 0.0 "Kraus+ 2017" 2MASS
+2.1652834e-06 2.137166e-08 3.839221e-10 "Huber+ 2017" 2MASS
+2.1652834e-06 2.1435648e-08 0.0 "Zacharias+ 2005" 2MASS
+2.1652834e-06 2.137166e-08 3.839221e-10 "Cutri+ 2012" 2MASS
+2.1915407e-06 2.0362908e-08 2.498516e-10 "Cutri+ 2003" 2MASS
+2.1915407e-06 2.017552e-08 3.7477746e-10 "Cutri+ 2003" 2MASS
+2.2024815e-06 1.9047915e-08 0.0 "Lawrence+ 2012" UKIDSS
+2.2024815e-06 1.9047915e-08 0.0 "Lawrence+ 2012" UKIDSS
+3.35233e-06 5.552532e-09 1.0677947e-10 "Esplin+ 2014" WISE
+3.35233e-06 5.552532e-09 1.0677947e-10 "Cutri+ 2012" WISE
+3.35233e-06 5.5258376e-09 1.0677947e-10 "Cutri+ 2013" WISE
+3.35233e-06 5.6059224e-09 1.3347434e-10 "Bulger+ 2014" WISE
+3.55244e-06 6.0856604e-09 1.1886056e-10 "Bulger+ 2014" Spitzer
+3.55244e-06 6.0618888e-09 1.1886056e-10 "Esplin+ 2014" Spitzer
+3.55244e-06 5.8003953e-09 2.6149324e-10 "Rebull+ 2010" Spitzer
+4.4961334e-06 2.89386e-09 7.420154e-11 "Bulger+ 2014" Spitzer
+4.4961334e-06 2.7602973e-09 1.3356276e-10 "Rebull+ 2010" Spitzer
+4.4961334e-06 2.89386e-09 5.9361224e-11 "Esplin+ 2014" Spitzer
+4.6032037e-06 2.6333815e-09 7.078983e-11 "Bulger+ 2014" WISE
+4.6032037e-06 2.6192235e-09 4.24739e-11 "Cutri+ 2013" WISE
+4.6032037e-06 2.6192235e-09 5.663186e-11 "Cutri+ 2012" WISE
+4.6032037e-06 2.6192235e-09 4.24739e-11 "Esplin+ 2014" WISE
+5.7349316e-06 1.2222768e-09 3.6485877e-11 "Esplin+ 2014" Spitzer
+5.7349316e-06 1.185791e-09 5.472882e-11 "Rebull+ 2010" Spitzer
+5.7349316e-06 1.2313983e-09 2.736441e-11 "Bulger+ 2014" Spitzer
+7.877531e-06 3.659628e-10 2.030441e-11 "Rebull+ 2010" Spitzer
+7.877531e-06 3.6934686e-10 1.0152205e-11 "Esplin+ 2014" Spitzer
+7.877531e-06 3.722475e-10 9.668766e-12 "Bulger+ 2014" Spitzer
+1.1567826e-05 7.6224874e-11 4.259625e-12 "Cutri+ 2013" WISE
+1.1567826e-05 6.994753e-11 3.8112434e-12 "Esplin+ 2014" WISE
+1.1567826e-05 7.0171716e-11 4.0354343e-12 "Cutri+ 2012" WISE
+1.1567826e-05 7.6224874e-11 4.4838157e-12 "Bulger+ 2014" WISE
+2.2105962e-05 2.3942364e-11 0.0 "Bulger+ 2014" WISE
+2.2105962e-05 2.3758193e-11 0.0 "Cutri+ 2012" WISE
+2.2105962e-05 2.7564416e-11 0.0 "Cutri+ 2013" WISE
+2.369107e-05 1.01555995e-11 1.229362e-12 "Esplin+ 2014" Spitzer
+2.369107e-05 8.765886e-12 1.4431641e-12 "Rebull+ 2010" Spitzer
+2.369107e-05 3.9874093e-10 4.7570965e-11 "Meng+ 2017" Unspecified
+2.369107e-05 8.5520835e-12 1.6035158e-12 "Bulger+ 2014" Spitzer
+7.004763e-05 6.7255377e-12 0.0 "Bulger+ 2014" Herschel
+7.146941e-05 2.3140731e-10 0.0 "Bulger+ 2014" Spitzer
+7.146941e-05 2.3023265e-10 0.0 "Rebull+ 2010" Spitzer
+0.00015600624 1.5654567e-10 0.0 "Rebull+ 2010" Spitzer
+0.00016011101 1.8606984e-11 0.0 "Bulger+ 2014" Herschel

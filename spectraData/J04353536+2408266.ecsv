@@ -1,0 +1,72 @@
+# %ECSV 0.9
+# ---
+# datatype:
+# - {name: lambda, datatype: float32}
+# - {name: flux, datatype: float32}
+# - {name: error, datatype: float32}
+# - {name: source, datatype: object}
+# - {name: telescope, datatype: object}
+# meta: !!omap
+# - {SimbadName: '[HCA99] C'}
+# - {2MASSID: J04353536+2408266}
+# - {ObjectType: YSO}
+# - {StellarType: M6-M8}
+# - {StellarTypeSource: Bulger+ 2014}
+# - {RA: 04 35 35.36}
+# - {DEC: +24 08 26.6}
+# - {CoordSource: Cutri+ 2003}
+# - {Distance: -1.0}
+# - {DistanceSource: ''}
+# - {Teff: 2880}
+# - {TeffSource: Bulger+ 2014}
+# - {Radius: -1.0}
+# - {RadiusSource: ''}
+# - {Luminosity: -1.0}
+# - {LuminositySource: ''}
+# - {Ag: -1.0}
+# - {AgSource: ''}
+# - {Region: Taurus}
+# - {RegionSource: Bulger+ 2014}
+# - {Av: -1.0}
+# - {AvSource: ''}
+# - {Age: -1.0}
+# - {AgeSource: ''}
+# - {Mass: -1.0}
+# - {MassSource: ''}
+# - {Mdot: -1.0}
+# - {MdotSource: ''}
+# - {DiskMass: -1.0}
+# - {DiskMassSource: ''}
+# - {DiskRadius: -1.0}
+# - {DiskRadiusSource: ''}
+# - {BinaryFlag: -1}
+# - {BinaryFlagSource: ''}
+# - {ExtraField: ''}
+# - comments: ['All units for flux+wavelength are SI, I leave it to the user to convert/add astropy units', Meta data about the star is
+#       stored under indivdual fields, 'e.g. if data stored in variable called "dataTable" the R.A. of the star can be found via "dataTable.meta["RA"]".',
+#     Everything intended to be read into astropy tables - either directly or via the getSpectraFromFile() function., See GITHUB-REPO
+#       for more details., Please cite SOME-PAPER if you make use of this tool or data.]
+# - {FileCreated: '2018-09-17'}
+# schema: astropy-2.0
+lambda flux error source telescope
+1.2398743e-06 5.620286e-10 0.0 "Zacharias+ 2005" 2MASS
+1.250886e-06 5.636806e-10 0.0 "Cutri+ 2003" 2MASS
+1.631144e-06 2.6722986e-09 0.0 "Cutri+ 2003" 2MASS
+1.650619e-06 2.631634e-09 0.0 "Zacharias+ 2005" 2MASS
+2.1652834e-06 1.77244e-09 0.0 "Zacharias+ 2005" 2MASS
+2.1915407e-06 3.810237e-09 8.120178e-11 "Cutri+ 2003" 2MASS
+2.1915407e-06 1.6740059e-09 1.8738873e-10 "Cutri+ 2003" 2MASS
+2.2024815e-06 8.596299e-10 6.1843876e-12 "Lawrence+ 2012" UKIDSS
+2.2024815e-06 8.596299e-10 6.1843876e-12 "Lawrence+ 2012" UKIDSS
+3.35233e-06 9.716932e-09 2.402538e-10 "Bulger+ 2014" WISE
+3.55244e-06 2.6149324e-10 4.7544222e-11 "Bulger+ 2014" Spitzer
+4.4961334e-06 1.780837e-10 1.4840306e-11 "Bulger+ 2014" Spitzer
+4.6032037e-06 7.9284606e-09 1.4157966e-10 "Bulger+ 2014" WISE
+5.7349316e-06 9.1214696e-11 9.121469e-12 "Bulger+ 2014" Spitzer
+7.877531e-06 4.8343832e-11 4.834383e-12 "Bulger+ 2014" Spitzer
+1.1567826e-05 1.8832027e-09 4.4838157e-11 "Bulger+ 2014" WISE
+2.2105962e-05 1.1602839e-08 3.069534e-10 "Bulger+ 2014" WISE
+0.00010007005 5.0629048e-09 0.0 "Bulger+ 2014" Herschel
+0.00045030846 8.965483e-12 2.7369875e-12 "Bulger+ 2014" Unspecified
+0.00084985833 7.725758e-13 4.5689967e-14 "Bulger+ 2014" Unspecified
+0.0013008976 1.949969e-13 1.2408894e-14 "Bulger+ 2014" Unspecified
