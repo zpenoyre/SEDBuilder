@@ -1,7 +1,10 @@
 # to run: python setup.py install
 
 #import numpy as np
-from distutils.core import setup
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 #from distutils.extension import Extension
 
 setup(name='SEDBuilder',
