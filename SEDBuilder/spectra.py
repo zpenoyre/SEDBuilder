@@ -501,8 +501,8 @@ def rewriteExtraField(twoMassID,saveDir,entry):
     return table
     
 def plotSED(thisPlot,table,
-colours=['#6699CC','#FFD23F','#FF8C42','#FF3C38','#A23E48'],
-telescopes=['Gaia','2MASS','WISE','Spitzer','Herschel']):
+colours=['#6699CC','#FFD23F','#FF8C42','#FF3C38','#A23E48','k'],
+telescopes=['Gaia','2MASS','WISE','Spitzer','Herschel','SMA']):
     ls=table['lambda']
     fs=table['flux']
     es=table['error']
@@ -525,9 +525,37 @@ telescopes=['Gaia','2MASS','WISE','Spitzer','Herschel']):
     thisPlot.set_xscale('log')
     thisPlot.set_xlim(0.5*np.min(ls),2*np.max(ls))
     
-    thisPlot.set_ylabel(r'$\lambda F_\lambda$ (W m)')
+    thisPlot.set_ylabel(r'$\lambda F_\lambda$ (W m^{-1})')
     thisPlot.set_xlabel(r'$\lambda$ (m)')
     
     thisPlot.legend(title=table.meta['SimbadName'],frameon=False)
-        
     
+# finds the unique, most recent photometric data at each wavelength for a selection of telescopes (useful for fitting and reducing data to ~reliable handful of points)    
+def cleanData(table,telescopes=['Gaia','2MASS','WISE','Spitzer','Herschel','SMA']):
+    uIds=np.zeros(0,dtype=int)
+    ts=table['telescope']
+    ls=table['lambda']
+    fs=table['flux']
+    es=table['error']
+    ss=table['source']
+    for i,telescope in enumerate(telescopes):
+        thisSource=np.flatnonzero(ts==telescope)
+        theseLs=ls[thisSource]
+        theseFs=fs[thisSource]
+        theseEs=es[thisSource]
+        theseSs=ss[thisSource]
+        theseYs=np.zeros_like(theseSs)
+        for k in range(theseSs.size):
+            theseYs[k]=theseSs[k][-4:]
+        upper=np.flatnonzero(theseEs==0)
+        points=np.flatnonzero(theseEs!=0)
+        uniqueLs=np.unique(theseLs)
+        for j,l in enumerate(uniqueLs):
+            nearIndices=np.flatnonzero(np.abs(theseLs-l)/l < 0.1)
+            nearBounded=np.flatnonzero((np.abs(theseLs-l)/l < 0.1) & (theseEs>0))
+            if nearBounded.size>0: # if there are points with error bars, prefer them
+                nearIndices=nearBounded
+            uId=nearIndices[np.argmax(theseYs[nearIndices])]
+            uIds=np.unique(np.hstack((uIds,thisSource[uId])))
+            
+    return table[uIds]
