@@ -6,6 +6,7 @@ import astroquery.gaia
 import astroquery.irsa
 import astropy
 import astropy.units as u
+import urllib2
 
 from pathlib import Path
 import datetime
@@ -129,7 +130,7 @@ def getRef(ref): #finds the reference (in the form "Herczeg+ 2014") for a given 
     reference=description[description.rfind('(')+1:description.rfind(')')]
     return reference.replace(",","") #removes any commas
     
-def getVizierSED(ra,dec,windowSize=2):
+def getVizierSED(ra,dec,getBibcodes=False,windowSize=2):
     #star=astroquery.simbad.Simbad.query_object(mainName)
     #starDict=getInfo(name=name,ra=ra,dec=dec)
     raString=str(ra).replace(' ','+').strip()
@@ -155,13 +156,34 @@ def getVizierSED(ra,dec,windowSize=2):
     
     sources=np.empty_like(lambdas,dtype=object)
     telescopes=np.empty_like(lambdas,dtype=object)
-    
+    bibcodes = np.empty_like(lambdas,dtype=object)
+
     for i,table in enumerate(tables):
         tableName = table[:table.rfind('/')]
         catalogs=astroquery.vizier.Vizier.find_catalogs(tableName)
         if len(catalogs)==0:
+            print("no catalog here")
             continue #for some reason can't find table of data...
         description=catalogs[tableName].description
+        
+        if getBibcodes==True:
+            ftpLink = "ftp://cdsarc.u-strasbg.fr/pub/cats/{0}/ReadMe".format(tableName)
+            ftpData = urllib2.urlopen(ftpLink)
+
+            bibcodeList = []
+            for line in ftpData:
+                line = line.strip(" \n")
+                #print(line[0])
+                if (len(line) > 1):
+                    #is it a bibcode line? (i.e. starts with =year)
+                    if (line[0] == "=") & ((line[1] == "1") | (line[1] == "2")):
+                        bibcodeList.append(line[1:])
+                        break
+            try:
+                bibcodes[i] = bibcodeList[0]
+            except IndexError: #no valid bibcodes
+                bibcodes[i] = 'no bibcode found'
+
         reference=description[description.rfind('(')+1:description.rfind(')')].replace(',','')
         #print('ref: ',reference)
         #sources[i]='"'+reference.replace(',','')+'"'
@@ -224,7 +246,11 @@ def getVizierSED(ra,dec,windowSize=2):
         if sources[i]=='Meng+ 2017': #points from this paper seem completely wrong? (https://ui.adsabs.harvard.edu/#abs/2017ApJ...836...34M/abstract)
             telescopes[i]='Unspecified'
         #telescopes[i]='"'+telescopes[i]+'"'
-    return lambdas,fluxs,sigmas,sources,telescopes
+
+    if getBibcodes==True:
+        return lambdas,fluxs,sigmas,sources,telescopes,bibcodes
+    else:
+        return lambdas,fluxs,sigmas,sources,telescopes
 
 def queryIrsa(ra,dec,windowSize=2): #at the moment only queries the Herchel point source catalogs, but open to suggestions
     wavelengths=[70,100,160,250,350,500]
@@ -260,7 +286,7 @@ def queryIrsa(ra,dec,windowSize=2): #at the moment only queries the Herchel poin
 #        addToSED(tmName,irsaLs[irsaLs>2e-4],irsaFs[irsaLs>2e-4],irsaEs[irsaLs>2e-4],2017,'Schulz+ 2017','Herschel')
 
 # Finds and returns all SED data readable online (from Vizier & IRAS) for a given object, can also save it to file        
-def getSED(name=-1,ra=-1,dec=-1,saveDir=-1,windowSize=2,overwrite=0):
+def getSED(name=-1,ra=-1,dec=-1,saveDir=-1,getBibcodes=False,windowSize=2,overwrite=0):
     starDict=getInfo(name=name,ra=ra,dec=dec)
     ra=starDict['RA']
     dec=starDict['DEC']
@@ -283,20 +309,33 @@ def getSED(name=-1,ra=-1,dec=-1,saveDir=-1,windowSize=2,overwrite=0):
             #table=astropy.io.ascii.read(fName)
             return getSEDFromFile(starDict['2MASSID'],saveDir)
     
-    columnNames=('lambda', 'flux', 'error','source','telescope')
-    #HOW CAN I SAVE AS SCIENTIFIC NOTATION FOR A FIXED NUMBER OF SIGNIFICANT FIGURES???
-    dataTypes=('f4','f4','f4','object','object') # note: strings must be treated as objects not strings to allow variable length 
-    vLs,vFs,vEs,vSs,vTs = getVizierSED(ra,dec,windowSize=windowSize) #SED data from vizier
-    table=astropy.table.Table([vLs,vFs,vEs,vSs,vTs],names=columnNames,dtype=dataTypes)
+    
+    if getBibcodes==True:
+        columnNames=('lambda', 'flux', 'error','source','telescope','bibcode')
+        dataTypes=('f4','f4','f4','object','object','object') # note: strings must be treated as objects not strings to allow variable length 
+        vLs,vFs,vEs,vSs,vTs,vBs = getVizierSED(ra,dec,getBibcodes=getBibcodes,windowSize=windowSize) #SED data from vizier
+        table=astropy.table.Table([vLs,vFs,vEs,vSs,vTs,vBs],names=columnNames,dtype=dataTypes)
+    else:
+        columnNames=('lambda', 'flux', 'error','source','telescope')
+        dataTypes=('f4','f4','f4','object','object') # note: strings must be treated as objects not strings to allow variable length 
+        vLs,vFs,vEs,vSs,vTs = getVizierSED(ra,dec,getBibcodes=getBibcodes,windowSize=windowSize)
+        table=astropy.table.Table([vLs,vFs,vEs,vSs,vTs],names=columnNames,dtype=dataTypes)
+    
     
     iLs,iFs,iEs = queryIrsa(ra,dec,windowSize=windowSize)
     for i in range(iLs.size):
         telescope='Herschel'
         if iLs[i]>2e-4:
             source='Schulz+ 2017'
+            bibcode='2017arXiv170600448S'
         else:
             source='Marton+ 2017'
-        table.add_row([iLs[i],iFs[i],iEs[i],source,telescope])
+            bibcode='2017arXiv170505693M'
+
+        if getBibcodes==True:
+            table.add_row([iLs[i],iFs[i],iEs[i],source,telescope,bibcode])
+        else:
+            table.add_row([iLs[i],iFs[i],iEs[i],source,telescope])
     table.sort('lambda')
     if saveDir!=-1:
         starDict=addPropertyToFile(starDict)
@@ -358,7 +397,7 @@ def getSEDFromFile(twoMassID,saveDir):
         return -1
         
 # Adds new data points to an existing SED, tries not to duplicate anything
-def addToSED(twoMassID,saveDir,ls,fs,es,source,telescope,overwrite=0):
+def addToSED(twoMassID,saveDir,ls,fs,es,source,telescope,bibcode,overwrite=0):
     table=getSEDFromFile(twoMassID,saveDir)
     if (source in np.unique(table['source'])) & (overwrite!=1):
         print('\n Already data in table from this source (',source,')')
@@ -366,7 +405,7 @@ def addToSED(twoMassID,saveDir,ls,fs,es,source,telescope,overwrite=0):
         print('If you really do want to do this you can run the function with overwrite=1')
         return table
     for i in range(ls.size):
-        table.add_row([ls[i],fs[i],es[i],source,telescope])
+        table.add_row([ls[i],fs[i],es[i],source,telescope,bibcode])
     table.sort('lambda')
     if overwrite!=-1: # expect to save to file (unless the user REALLY doesn't want to)
         if saveDir[-1]!='/':
