@@ -6,7 +6,6 @@ import astroquery.gaia
 import astroquery.irsa
 import astropy
 import astropy.units as u
-import urllib2
 
 from pathlib import Path
 import datetime
@@ -167,6 +166,7 @@ def getVizierSED(ra,dec,getBibcodes=False,windowSize=2):
         description=catalogs[tableName].description
         
         if getBibcodes==True:
+            import urllib2
             ftpLink = "ftp://cdsarc.u-strasbg.fr/pub/cats/{0}/ReadMe".format(tableName)
             ftpData = urllib2.urlopen(ftpLink)
 
@@ -525,7 +525,7 @@ telescopes=['Gaia','2MASS','WISE','Spitzer','Herschel','SMA']):
     thisPlot.set_xscale('log')
     thisPlot.set_xlim(0.5*np.min(ls),2*np.max(ls))
     
-    thisPlot.set_ylabel(r'$\lambda F_\lambda$ (W m^{-1})')
+    thisPlot.set_ylabel(r'$\lambda F_\lambda$ (W m$^{-1}$)')
     thisPlot.set_xlabel(r'$\lambda$ (m)')
     
     thisPlot.legend(title=table.meta['SimbadName'],frameon=False)
