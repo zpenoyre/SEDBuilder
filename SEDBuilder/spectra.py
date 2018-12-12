@@ -528,7 +528,7 @@ telescopes=['Gaia','2MASS','WISE','Spitzer','Herschel','SMA']):
     thisPlot.set_ylabel(r'$\lambda F_\lambda$ (W m$^{-1}$)')
     thisPlot.set_xlabel(r'$\lambda$ (m)')
     
-    thisPlot.legend(title=table.meta['SimbadName'],frameon=False)
+    thisPlot.legend(title=table.meta['SimbadName'],frameon=False,fontsize=12)
     
 # finds the unique, most recent photometric data at each wavelength for a selection of telescopes (useful for fitting and reducing data to ~reliable handful of points)    
 def cleanData(table,telescopes=['Gaia','2MASS','WISE','Spitzer','Herschel','SMA']):
