@@ -42,7 +42,7 @@ def getInfo(ra=-1,dec=-1,name=-1):
     else:
         print('\n Must enter name or coords (ra, dec) of star')
 
-    
+
     ra=star['RA']
     dec=star['DEC']
     names=star['IDS'].decode('utf-8')
@@ -57,9 +57,9 @@ def getInfo(ra=-1,dec=-1,name=-1):
         print('\n No 2MASS entry for star: ',mainName)
         print('Looking for nearest object with a 2MASS name')
         return getInfo(ra=ra,dec=dec)
-    
+
     starDict={}
-    
+
     starDict['SimbadName']=star['MAIN_ID'].decode('utf-8') #getting rid of small b...
     starDict['2MASSID']=tmName
     starDict['ObjectType']=star['OTYPE'].decode('utf-8')
@@ -74,7 +74,7 @@ def getInfo(ra=-1,dec=-1,name=-1):
     else:
         starDict['Distance']=1000/star['PLX_VALUE'] #1000 as Simbad gives value in mas
         starDict['DistanceSource']=getRef(star['PLX_BIBCODE'].decode('utf-8'))
-    
+
     Teff,rad,lum,Ag=gaiaData(ra,dec)
     gaiaSource="Gaia Collaboration 2018"
     starDict['Teff']=Teff
@@ -93,7 +93,7 @@ def getInfo(ra=-1,dec=-1,name=-1):
     starDict['AgSource']=gaiaSource
     if Ag<=0:
         starDict['AgSource']=""
-    
+
     return starDict
 
 def gaiaData(ra,dec):
@@ -128,16 +128,16 @@ def getRef(ref): #finds the reference (in the form "Herczeg+ 2014") for a given 
     description=catalogs[list(catalogs.items())[0][0]].description
     reference=description[description.rfind('(')+1:description.rfind(')')]
     return reference.replace(",","") #removes any commas
-    
+
 def getVizierSED(ra,dec,getBibcodes=False,windowSize=2):
     #star=astroquery.simbad.Simbad.query_object(mainName)
     #starDict=getInfo(name=name,ra=ra,dec=dec)
     raString=str(ra).replace(' ','+').strip()
     decString=str(dec).replace(' ','+').strip()
-    
+
     url="http://vizier.u-strasbg.fr/viz-bin/sed?-c="+raString+decString+"&-c.r="+str(windowSize)+"&-c.u=arcsec"
     data=astropy.table.Table.read(url)
-    
+
     lambdas=c/np.array(1e9*data['sed_freq']) # converting to wavelength in m
     fluxs=1e-26*c*np.array(data['sed_flux'])/lambdas**2 # converting to F_lambda in W m
     sigmas=np.nan_to_num(1e-26*c*np.array(data['sed_eflux'])/lambdas**2) # converting to error in F_lambda in W m
@@ -152,7 +152,7 @@ def getVizierSED(ra,dec,getBibcodes=False,windowSize=2):
     sigmas=sigmas[order]
     source=source[order]
     tables=tables[order]
-    
+
     sources=np.empty_like(lambdas,dtype=object)
     telescopes=np.empty_like(lambdas,dtype=object)
     bibcodes = np.empty_like(lambdas,dtype=object)
@@ -164,7 +164,7 @@ def getVizierSED(ra,dec,getBibcodes=False,windowSize=2):
             print("no catalog here")
             continue #for some reason can't find table of data...
         description=catalogs[tableName].description
-        
+
         if getBibcodes==True:
             import urllib2
             ftpLink = "ftp://cdsarc.u-strasbg.fr/pub/cats/{0}/ReadMe".format(tableName)
@@ -188,7 +188,7 @@ def getVizierSED(ra,dec,getBibcodes=False,windowSize=2):
         #print('ref: ',reference)
         #sources[i]='"'+reference.replace(',','')+'"'
         sources[i]=reference
-        
+
         # Manually maps each data point to the telescope it comes from (probably should tabulate this elsewhere and work from that...)
         if ('Herschel' in source[i]) | (reference == 'Marsh+ 2016'):
             telescopes[i]='Herschel'
@@ -242,7 +242,7 @@ def getVizierSED(ra,dec,getBibcodes=False,windowSize=2):
             telescopes[i]='Unspecified'
             if source[i][0]!=':':
                 print('___did you know about the ',source[i],' telescope?')
-                
+
         if sources[i]=='Meng+ 2017': #points from this paper seem completely wrong? (https://ui.adsabs.harvard.edu/#abs/2017ApJ...836...34M/abstract)
             telescopes[i]='Unspecified'
         #telescopes[i]='"'+telescopes[i]+'"'
@@ -285,12 +285,12 @@ def queryIrsa(ra,dec,windowSize=2): #at the moment only queries the Herchel poin
 #    if irsaLs[irsaLs>2e-4].size>0:
 #        addToSED(tmName,irsaLs[irsaLs>2e-4],irsaFs[irsaLs>2e-4],irsaEs[irsaLs>2e-4],2017,'Schulz+ 2017','Herschel')
 
-# Finds and returns all SED data readable online (from Vizier & IRAS) for a given object, can also save it to file        
+# Finds and returns all SED data readable online (from Vizier & IRAS) for a given object, can also save it to file
 def getSED(name=-1,ra=-1,dec=-1,saveDir=-1,getBibcodes=False,windowSize=2,overwrite=0):
     starDict=getInfo(name=name,ra=ra,dec=dec)
     ra=starDict['RA']
     dec=starDict['DEC']
-    
+
     if (saveDir!=-1) & (overwrite!=1):
         if saveDir[-1]!='/':
             saveDir=saveDir+'/'
@@ -308,20 +308,20 @@ def getSED(name=-1,ra=-1,dec=-1,saveDir=-1,getBibcodes=False,windowSize=2,overwr
                 print('Or to supress this warning set overwrite = -1')
             #table=astropy.io.ascii.read(fName)
             return getSEDFromFile(starDict['2MASSID'],saveDir)
-    
-    
+
+
     if getBibcodes==True:
         columnNames=('lambda', 'flux', 'error','source','telescope','bibcode')
-        dataTypes=('f4','f4','f4','object','object','object') # note: strings must be treated as objects not strings to allow variable length 
+        dataTypes=('f4','f4','f4','object','object','object') # note: strings must be treated as objects not strings to allow variable length
         vLs,vFs,vEs,vSs,vTs,vBs = getVizierSED(ra,dec,getBibcodes=getBibcodes,windowSize=windowSize) #SED data from vizier
         table=astropy.table.Table([vLs,vFs,vEs,vSs,vTs,vBs],names=columnNames,dtype=dataTypes)
     else:
         columnNames=('lambda', 'flux', 'error','source','telescope')
-        dataTypes=('f4','f4','f4','object','object') # note: strings must be treated as objects not strings to allow variable length 
+        dataTypes=('f4','f4','f4','object','object') # note: strings must be treated as objects not strings to allow variable length
         vLs,vFs,vEs,vSs,vTs = getVizierSED(ra,dec,getBibcodes=getBibcodes,windowSize=windowSize)
         table=astropy.table.Table([vLs,vFs,vEs,vSs,vTs],names=columnNames,dtype=dataTypes)
-    
-    
+
+
     iLs,iFs,iEs = queryIrsa(ra,dec,windowSize=windowSize)
     for i in range(iLs.size):
         telescope='Herschel'
@@ -339,7 +339,7 @@ def getSED(name=-1,ra=-1,dec=-1,saveDir=-1,getBibcodes=False,windowSize=2,overwr
     table.sort('lambda')
     if saveDir!=-1:
         starDict=addPropertyToFile(starDict)
-    
+
     for key in starDict.keys():
         table.meta[key]=str(starDict[key])
     comments=['All units for flux+wavelength are SI, I leave it to the user to convert/add astropy units',
@@ -347,9 +347,10 @@ def getSED(name=-1,ra=-1,dec=-1,saveDir=-1,getBibcodes=False,windowSize=2,overwr
     'e.g. if data stored in variable called "dataTable" the R.A. of the star can be found via "dataTable.meta["RA"]".',
     'Everything intended to be read into astropy tables - either directly or via the getSEDFromFile() function.',
     'See https://github.com/zpenoyre/SEDBuilder for more details.',
-    'Please cite Penoyre+2018 if you make use of this tool or data.']
+    'Please cite Penoyre+2019 if you make use of this tool.',
+    'Please cite relevant authors if you make use of their data.']
     table.meta['comments']=comments
-    
+
     if saveDir!=-1:
         table.meta['FileCreated']=str(datetime.datetime.today()).split()[0]
         if saveDir[-1]!='/':
@@ -357,7 +358,7 @@ def getSED(name=-1,ra=-1,dec=-1,saveDir=-1,getBibcodes=False,windowSize=2,overwr
         fName=saveDir+starDict['2MASSID']+'.ecsv'
         astropy.io.ascii.write(table,output=fName, format='ecsv',overwrite=True)
     return table
-    
+
 # There are some supplementary properties we'd like to keep track of but must add by hand (e.g. Mdot)
 # This function just helps reserve a space for them in the data file
 def addPropertyToFile(starDict):
@@ -369,7 +370,7 @@ def addPropertyToFile(starDict):
         starDict[field+'Source']=''
     starDict['ExtraField']='' #adding a spare field for whatever data a user might want to put in
     return starDict
-    
+
 # Retrieves an SED from file
 def getSEDFromFile(twoMassID,saveDir):
     if saveDir[-1]!='/':
@@ -395,7 +396,7 @@ def getSEDFromFile(twoMassID,saveDir):
         print('\n No file found at: ')
         print(fName)
         return -1
-        
+
 # Adds new data points to an existing SED, tries not to duplicate anything
 def addToSED(twoMassID,saveDir,ls,fs,es,source,telescope,bibcode,overwrite=0):
     table=getSEDFromFile(twoMassID,saveDir)
@@ -413,7 +414,7 @@ def addToSED(twoMassID,saveDir,ls,fs,es,source,telescope,bibcode,overwrite=0):
         fName=saveDir+twoMassID+'.ecsv'
         astropy.io.ascii.write(table,output=fName, format='ecsv')
     return table
-    
+
 def addToMetadata(twoMassID,saveDir,field,value,source,overwrite=0):
     if type(field)==list: # If given a list of properties
         nProperty=len(field)
@@ -463,14 +464,14 @@ def addToMetadata(twoMassID,saveDir,field,value,source,overwrite=0):
         return table
     table.meta[field]=value
     table.meta[field+'Source']=source
-    
+
     if saveDir[-1]!='/':
         saveDir=saveDir+'/'
     fName=saveDir+twoMassID+'.ecsv'
-    astropy.io.ascii.write(table,output=fName, format='ecsv') 
-    
+    astropy.io.ascii.write(table,output=fName, format='ecsv')
+
     return table
-    
+
 # Very similar to above, except now we may want multiple sources for one star (specifying that all these papers touch on this star)
 def addRegionToMetadata(twoMassID,saveDir,region,source):
     table=getSEDFromFile(twoMassID,saveDir)
@@ -485,9 +486,9 @@ def addRegionToMetadata(twoMassID,saveDir,region,source):
     if saveDir[-1]!='/':
         saveDir=saveDir+'/'
     fName=saveDir+twoMassID+'.ecsv'
-    astropy.io.ascii.write(table,output=fName, format='ecsv') 
+    astropy.io.ascii.write(table,output=fName, format='ecsv')
     return table
-    
+
 # Have an extra field! Write whatever you want! Go crazy!
 # Note - I've sometimes used this to record the parameters of fitting models
 # You can put lists or dictionaries in here, as long as you decide how to convert them to strings and back
@@ -499,7 +500,7 @@ def rewriteExtraField(twoMassID,saveDir,entry):
     fName=saveDir+twoMassID+'.ecsv'
     astropy.io.ascii.write(table,output=fName, format='ecsv')
     return table
-    
+
 def plotSED(thisPlot,table,
 colours=['#6699CC','#FFD23F','#FF8C42','#FF3C38','#A23E48','k'],
 telescopes=['Gaia','2MASS','WISE','Spitzer','Herschel','SMA']):
@@ -519,19 +520,19 @@ telescopes=['Gaia','2MASS','WISE','Spitzer','Herschel','SMA']):
     thisPlot.errorbar(ls[noTel],ls[noTel]*fs[noTel],yerr=ls[noTel]*es[noTel],color='grey',fmt='o',lw=1,zorder=2,label='Other')
     noTelUppers=np.flatnonzero((~np.isin(ts,telescopes)) & (es<=0))
     thisPlot.scatter(ls[noTelUppers],ls[noTelUppers]*fs[noTelUppers],facecolors='w',edgecolors='grey',marker='v',zorder=1,label='')
-    
+
     thisPlot.set_yscale('log')
     thisPlot.set_ylim(0.1*np.min(ls*fs),10*np.max(ls*fs))
     thisPlot.set_xscale('log')
     thisPlot.set_xlim(0.5*np.min(ls),2*np.max(ls))
-    
+
     thisPlot.set_ylabel(r'$\lambda F_\lambda$ (W m$^{-1}$)')
     thisPlot.set_xlabel(r'$\lambda$ (m)')
-    
+
     thisPlot.legend(title=table.meta['SimbadName'],frameon=False,fontsize=12)
-    
-# finds the unique, most recent photometric data at each wavelength for a selection of telescopes (useful for fitting and reducing data to ~reliable handful of points)    
-def cleanData(table,telescopes=['Gaia','2MASS','WISE','Spitzer','Herschel','SMA']):
+
+# finds the unique, most recent photometric data at each wavelength for a selection of telescopes (useful for fitting and reducing data to ~reliable handful of points)
+def D(table,telescopes=['Gaia','2MASS','WISE','Spitzer','Herschel','SMA']):
     uIds=np.zeros(0,dtype=int)
     ts=table['telescope']
     ls=table['lambda']
@@ -557,5 +558,5 @@ def cleanData(table,telescopes=['Gaia','2MASS','WISE','Spitzer','Herschel','SMA'
                 nearIndices=nearBounded
             uId=nearIndices[np.argmax(theseYs[nearIndices])]
             uIds=np.unique(np.hstack((uIds,thisSource[uId])))
-            
+
     return table[uIds]
