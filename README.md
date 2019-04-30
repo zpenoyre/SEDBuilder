@@ -2,7 +2,7 @@
 
 `SEDBuilder` is an MIT-licensed Python code that collects VizieR and IRSA-tabulated photometric data points for any object with a 2MASS ID and uses them to make an SED. It contains SEDs for hundreds of example stars and YSOs in Taurus, Ophiuchus and Chamaeleon. It allows users to quickly access new photometric data, in the form of easy to use astropy tables, as well as to store and supplement that data.
 
-If you make use of it please cite Penoyre+ 2018 (in prep.) as well as any and all papers from which data has been collated (the source is attached to every data point).
+If you make use of it please cite Penoyre+ 2019 (in prep.) as well as any and all papers from which data has been collated (the source is attached to every data point).
 
 # Installation #
 
@@ -24,7 +24,7 @@ You can also use pip (though I believe that this will just install the bare pack
 
 # Examples #
 
-If you'd like to use the package, have a read through "introduction.ipynb". All the SED data published with Penoyre+2018 can also be found in "spectraData", the code used to generate it can be found in "dataCollation.ipynb". All saved data can be read with astropy tables or with the getSpectraFromFile() command.
+If you'd like to use the package, have a read through "introduction.ipynb". All the SED data published with Penoyre+2019 can also be found in "spectraData", the code used to generate it can be found in "dataCollation.ipynb". All saved data can be read with astropy tables or with the getSpectraFromFile() command.
 
 All of the SEDs collated in "spectraData" can be browsed at https://drive.google.com/file/d/1ar30PexSkc86Om4S0XHPS-luIE9ckkE9/view?usp=sharing.
 
